@@ -8,6 +8,7 @@ import {
   Coffee, Leaf, Database, ScrollText
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from '../i18n/ui';
@@ -32,8 +33,31 @@ const getIcon = (iconName: string) => {
 
 export default function Home() {
   const navigate = useNavigate();
-  const { startUnit, startRandomQuiz, completedUnits, hearts, currentCourseId, setCourse, getCurrentCourse, preferences } = useQuizStore();
+  const { 
+    startUnit, startRandomQuiz, completedUnits, hearts, 
+    currentCourseId, setCourse, getCurrentCourse, preferences,
+    setHomeScrollPosition
+  } = useQuizStore();
   const t = useTranslation();
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Small delay to ensure content is rendered and scrollable
+    const timer = setTimeout(() => {
+      if (scrollRef.current) {
+        const { homeScrollPositions } = useQuizStore.getState();
+        const savedPos = homeScrollPositions[currentCourseId] || 0;
+        scrollRef.current.scrollTop = savedPos;
+      }
+    }, 0);
+    return () => clearTimeout(timer);
+  }, [currentCourseId]);
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      setHomeScrollPosition(currentCourseId, scrollRef.current.scrollTop);
+    }
+  };
 
   const currentCourse = getCurrentCourse();
 
@@ -97,7 +121,11 @@ export default function Home() {
       </header>
 
       {/* Content List */}
-      <div className="flex-1 overflow-y-auto pb-20 bg-gray-50 p-4 space-y-8">
+      <div 
+        ref={scrollRef}
+        onScroll={handleScroll}
+        className="flex-1 overflow-y-auto pb-20 bg-gray-50 p-4 space-y-8"
+      >
         {/* Random Quiz Button */}
         <button
           onClick={handleRandom}

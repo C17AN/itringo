@@ -13,6 +13,7 @@ interface QuizStore {
   streak: number;
   completedUnits: string[];
   activeQuestions: Question[]; // Questions for the current session (shuffled or random)
+  homeScrollPositions: Record<string, number>;
   preferences: {
     fontSize: 'small' | 'medium' | 'large';
     jobRole: 'frontend' | 'backend' | 'infra';
@@ -31,6 +32,7 @@ interface QuizStore {
   nextQuestion: () => void;
   resetProgress: () => void;
   resetHearts: () => void;
+  setHomeScrollPosition: (courseId: string, position: number) => void;
   setFontSize: (size: 'small' | 'medium' | 'large') => void;
   setJobRole: (role: 'frontend' | 'backend' | 'infra') => void;
 }
@@ -46,6 +48,7 @@ export const useQuizStore = create<QuizStore>()(
       streak: 0,
       completedUnits: [],
       activeQuestions: [],
+      homeScrollPositions: {},
       preferences: {
         fontSize: 'medium',
         jobRole: 'frontend',
@@ -145,6 +148,10 @@ export const useQuizStore = create<QuizStore>()(
       }),
       
       resetHearts: () => set({ hearts: 5 }),
+      
+      setHomeScrollPosition: (courseId, position) => set((state) => ({
+        homeScrollPositions: { ...state.homeScrollPositions, [courseId]: position }
+      })),
       
       setFontSize: (size) => set((state) => ({ 
         preferences: { ...state.preferences, fontSize: size } 

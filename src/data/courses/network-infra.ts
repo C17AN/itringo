@@ -17,7 +17,7 @@ export const networkCourse: Course = {
           title: 'Connectivity',
           title_ko: '연결 확인',
           description: 'Testing connection and DNS.',
-          description_ko: '연결 상태 및 DNS 테스트.',
+          description_ko: '연결 상태 및 DNS 테스트',
           questions: [
             {
               id: 'q-curl-1',
@@ -75,7 +75,7 @@ export const networkCourse: Course = {
           title: 'Firewall & Security',
           title_ko: '방화벽 & 보안',
           description: 'Basic firewall concepts and tools.',
-          description_ko: '기초 방화벽 개념과 도구.',
+          description_ko: '기초 방화벽 개념과 도구',
           questions: [
             {
               id: 'q-iptables-1',
@@ -107,7 +107,7 @@ export const networkCourse: Course = {
           title: 'HTTP for Infra',
           title_ko: '인프라를 위한 HTTP',
           description: 'Status codes and debugging.',
-          description_ko: '상태 코드와 디버깅.',
+          description_ko: '상태 코드와 디버깅',
           questions: [
             {
               id: 'q-http-502',
@@ -148,7 +148,7 @@ export const networkCourse: Course = {
           title: 'TCP/IP',
           title_ko: 'TCP/IP',
           description: 'Understanding connections.',
-          description_ko: '연결 이해하기.',
+          description_ko: '연결 이해하기',
           questions: [
             {
               id: 'q-tcp-1',

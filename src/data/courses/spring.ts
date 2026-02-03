@@ -17,7 +17,7 @@ export const springCourse: Course = {
           "title": "Dependency Injection",
           "title_ko": "의존성 주입",
           "description": "IoC Container and DI patterns.",
-          "description_ko": "IoC 컨테이너와 DI 패턴.",
+          "description_ko": "IoC 컨테이너와 DI 패턴",
           "questions": [
             {
               "id": "di-1",
@@ -39,7 +39,8 @@ export const springCourse: Course = {
                 },
                 {
                   "id": "4",
-                  "text": "@Component"
+                  "text": "All of the above",
+                  "text_ko": "위의 모든 사항"
                 }
               ],
               "correctAnswerId": "4",
@@ -83,19 +84,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "Field Injection"
+                  "text": "Field Injection",
+                  "text_ko": "필드 주입 (Field Injection)"
                 },
                 {
                   "id": "2",
-                  "text": "Setter Injection"
+                  "text": "Setter Injection",
+                  "text_ko": "세터 주입 (Setter Injection)"
                 },
                 {
                   "id": "3",
-                  "text": "Constructor Injection"
+                  "text": "Constructor Injection",
+                  "text_ko": "생성자 주입 (Constructor Injection)"
                 },
                 {
                   "id": "4",
-                  "text": "Method Injection"
+                  "text": "Method Injection",
+                  "text_ko": "메서드 주입 (Method Injection)"
                 }
               ],
               "correctAnswerId": "3",
@@ -123,7 +128,8 @@ export const springCourse: Course = {
                 },
                 {
                   "id": "4",
-                  "text": "All of the above"
+                  "text": "All of the above",
+                  "text_ko": "위의 모든 사항"
                 }
               ],
               "correctAnswerId": "4",
@@ -139,7 +145,8 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "Application starts normally"
+                  "text": "Application starts normally",
+                  "text_ko": "애플리케이션이 정상적으로 시작됨"
                 },
                 {
                   "id": "2",
@@ -147,11 +154,13 @@ export const springCourse: Course = {
                 },
                 {
                   "id": "3",
-                  "text": "One bean is null"
+                  "text": "One bean is null",
+                  "text_ko": "하나의 빈이 null임"
                 },
                 {
                   "id": "4",
-                  "text": "Infinite loop at runtime"
+                  "text": "Infinite loop at runtime",
+                  "text_ko": "런타임 시 무한 루프 발생"
                 }
               ],
               "correctAnswerId": "2",
@@ -250,7 +259,7 @@ export const springCourse: Course = {
           "title": "Bean Lifecycle",
           "title_ko": "빈 생명주기",
           "description": "Bean scopes and lifecycle callbacks.",
-          "description_ko": "빈 스코프와 생명주기 콜백.",
+          "description_ko": "빈 스코프와 생명주기 콜백",
           "questions": [
             {
               "id": "bean-1",
@@ -399,7 +408,7 @@ export const springCourse: Course = {
           "title": "AOP",
           "title_ko": "AOP",
           "description": "Aspect Oriented Programming concepts.",
-          "description_ko": "관점 지향 프로그래밍 개념.",
+          "description_ko": "관점 지향 프로그래밍 개념",
           "questions": [
             {
               "id": "aop-1",
@@ -409,19 +418,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "The action taken at a join point"
+                  "text": "The action taken at a join point",
+                  "text_ko": "조인 포인트에서 취해지는 동작"
                 },
                 {
                   "id": "2",
-                  "text": "A predicate that matches join points"
+                  "text": "A predicate that matches join points",
+                  "text_ko": "조인 포인트와 매칭되는 조건자(predicate)"
                 },
                 {
                   "id": "3",
-                  "text": "The object being proxied"
+                  "text": "The object being proxied",
+                  "text_ko": "프록시되는 객체"
                 },
                 {
                   "id": "4",
-                  "text": "A module encapsulating a cross-cutting concern"
+                  "text": "A module encapsulating a cross-cutting concern",
+                  "text_ko": "횡단 관심사를 캡슐화하는 모듈"
                 }
               ],
               "correctAnswerId": "2",
@@ -521,19 +534,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "All methods in com.example.service package"
+                  "text": "All methods in com.example.service package",
+                  "text_ko": "com.example.service 패키지의 모든 메서드"
                 },
                 {
                   "id": "2",
-                  "text": "Only void methods in com.example.service"
+                  "text": "Only void methods in com.example.service",
+                  "text_ko": "com.example.service 패키지의 void 메서드만"
                 },
                 {
                   "id": "3",
-                  "text": "Only public methods in com.example.service"
+                  "text": "Only public methods in com.example.service",
+                  "text_ko": "com.example.service 패키지의 public 메서드만"
                 },
                 {
                   "id": "4",
-                  "text": "All classes in com.example.service"
+                  "text": "All classes in com.example.service",
+                  "text_ko": "com.example.service 패키지의 모든 클래스"
                 }
               ],
               "correctAnswerId": "1",
@@ -555,7 +572,7 @@ export const springCourse: Course = {
           "title": "Configuration",
           "title_ko": "설정",
           "description": "Auto-configuration and properties.",
-          "description_ko": "자동 설정과 프로퍼티.",
+          "description_ko": "자동 설정과 프로퍼티",
           "questions": [
             {
               "id": "boot-config-1",
@@ -593,19 +610,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "application.properties in jar"
+                  "text": "application.properties in jar",
+                  "text_ko": "jar 내부의 application.properties"
                 },
                 {
                   "id": "2",
-                  "text": "application.properties in config directory"
+                  "text": "application.properties in config directory",
+                  "text_ko": "config 디렉토리의 application.properties"
                 },
                 {
                   "id": "3",
-                  "text": "application.yml in classpath root"
+                  "text": "application.yml in classpath root",
+                  "text_ko": "클래스패스 루트의 application.yml"
                 },
                 {
                   "id": "4",
-                  "text": "application.properties in classpath root"
+                  "text": "application.properties in classpath root",
+                  "text_ko": "클래스패스 루트의 application.properties"
                 }
               ],
               "correctAnswerId": "2",
@@ -733,19 +754,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "Ignoring type mismatches"
+                  "text": "Ignoring type mismatches",
+                  "text_ko": "타입 불일치 무시"
                 },
                 {
                   "id": "2",
-                  "text": "Mapping environment variables like MY_PROP to myProp"
+                  "text": "Mapping environment variables like MY_PROP to myProp",
+                  "text_ko": "MY_PROP 같은 환경 변수를 myProp으로 매핑"
                 },
                 {
                   "id": "3",
-                  "text": "Skipping validation"
+                  "text": "Skipping validation",
+                  "text_ko": "검증 건너뛰기"
                 },
                 {
                   "id": "4",
-                  "text": "Injecting null values"
+                  "text": "Injecting null values",
+                  "text_ko": "null 값 주입"
                 }
               ],
               "correctAnswerId": "2",
@@ -773,7 +798,8 @@ export const springCourse: Course = {
                 },
                 {
                   "id": "4",
-                  "text": "All of the above"
+                  "text": "All of the above",
+                  "text_ko": "위의 모든 사항"
                 }
               ],
               "correctAnswerId": "4",
@@ -844,7 +870,7 @@ export const springCourse: Course = {
           "title": "Actuator",
           "title_ko": "액추에이터",
           "description": "Monitoring and managing your application.",
-          "description_ko": "애플리케이션 모니터링 및 관리.",
+          "description_ko": "애플리케이션 모니터링 및 관리",
           "questions": [
             {
               "id": "actuator-1",
@@ -966,19 +992,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "Logging"
+                  "text": "Logging",
+                  "text_ko": "로깅"
                 },
                 {
                   "id": "2",
-                  "text": "Tracing"
+                  "text": "Tracing",
+                  "text_ko": "트레이싱"
                 },
                 {
                   "id": "3",
-                  "text": "Metrics collection"
+                  "text": "Metrics collection",
+                  "text_ko": "메트릭 수집"
                 },
                 {
                   "id": "4",
-                  "text": "Health checks"
+                  "text": "Health checks",
+                  "text_ko": "상태 확인"
                 }
               ],
               "correctAnswerId": "3",
@@ -993,7 +1023,7 @@ export const springCourse: Course = {
           "title": "Testing",
           "title_ko": "테스트",
           "description": "Testing Spring Boot applications.",
-          "description_ko": "스프링 부트 애플리케이션 테스트.",
+          "description_ko": "스프링 부트 애플리케이션 테스트",
           "questions": [
             {
               "id": "test-1",
@@ -1149,7 +1179,7 @@ export const springCourse: Course = {
           "title": "Controller",
           "title_ko": "컨트롤러",
           "description": "Defining controllers and request mapping.",
-          "description_ko": "컨트롤러 정의와 요청 매핑.",
+          "description_ko": "컨트롤러 정의와 요청 매핑",
           "questions": [
             {
               "id": "mvc-1",
@@ -1159,19 +1189,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "@RestController includes @ResponseBody"
+                  "text": "@RestController includes @ResponseBody",
+                  "text_ko": "@RestController가 @ResponseBody를 포함함"
                 },
                 {
                   "id": "2",
-                  "text": "@Controller cannot return JSON"
+                  "text": "@Controller cannot return JSON",
+                  "text_ko": "@Controller는 JSON을 반환할 수 없음"
                 },
                 {
                   "id": "3",
-                  "text": "@RestController cannot return views"
+                  "text": "@RestController cannot return views",
+                  "text_ko": "@RestController는 뷰를 반환할 수 없음"
                 },
                 {
                   "id": "4",
-                  "text": "There is no difference"
+                  "text": "There is no difference",
+                  "text_ko": "차이가 없음"
                 }
               ],
               "correctAnswerId": "1",
@@ -1299,19 +1333,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "To bind request parameters to a bean"
+                  "text": "To bind request parameters to a bean",
+                  "text_ko": "요청 파라미터를 빈에 바인딩하기 위해"
                 },
                 {
                   "id": "2",
-                  "text": "To expose a bean to the view"
+                  "text": "To expose a bean to the view",
+                  "text_ko": "빈을 뷰에 노출하기 위해"
                 },
                 {
                   "id": "3",
-                  "text": "Both 1 and 2"
+                  "text": "Both 1 and 2",
+                  "text_ko": "1과 2 모두"
                 },
                 {
                   "id": "4",
-                  "text": "Neither"
+                  "text": "Neither",
+                  "text_ko": "둘 다 아님"
                 }
               ],
               "correctAnswerId": "3",
@@ -1335,7 +1373,8 @@ export const springCourse: Course = {
                 },
                 {
                   "id": "3",
-                  "text": "Both 1 and 2"
+                  "text": "Both 1 and 2",
+                  "text_ko": "1과 2 모두"
                 },
                 {
                   "id": "4",
@@ -1438,7 +1477,7 @@ export const springCourse: Course = {
           "title": "REST API",
           "title_ko": "REST API",
           "description": "Building RESTful services.",
-          "description_ko": "RESTful 서비스 구축.",
+          "description_ko": "RESTful 서비스 구축",
           "questions": [
             {
               "id": "rest-1",
@@ -1560,19 +1599,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "Negotiating security protocols"
+                  "text": "Negotiating security protocols",
+                  "text_ko": "보안 프로토콜 협상"
                 },
                 {
                   "id": "2",
-                  "text": "Selecting the best representation for a response"
+                  "text": "Selecting the best representation for a response",
+                  "text_ko": "응답을 위한 최적의 표현 선택"
                 },
                 {
                   "id": "3",
-                  "text": "Negotiating database connections"
+                  "text": "Negotiating database connections",
+                  "text_ko": "데이터베이스 연결 협상"
                 },
                 {
                   "id": "4",
-                  "text": "Selecting the server port"
+                  "text": "Selecting the server port",
+                  "text_ko": "서버 포트 선택"
                 }
               ],
               "correctAnswerId": "2",
@@ -1656,7 +1699,8 @@ export const springCourse: Course = {
                 },
                 {
                   "id": "4",
-                  "text": "Both 2 and 3"
+                  "text": "Both 2 and 3",
+                  "text_ko": "2와 3 모두"
                 }
               ],
               "correctAnswerId": "4",
@@ -1700,19 +1744,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "Use @Valid on the @RequestBody parameter"
+                  "text": "Use @Valid on the @RequestBody parameter",
+                  "text_ko": "@RequestBody 파라미터에 @Valid 사용"
                 },
                 {
                   "id": "2",
-                  "text": "Use @Validate on the method"
+                  "text": "Use @Validate on the method",
+                  "text_ko": "메서드에 @Validate 사용"
                 },
                 {
                   "id": "3",
-                  "text": "Use @Check on the class"
+                  "text": "Use @Check on the class",
+                  "text_ko": "클래스에 @Check 사용"
                 },
                 {
                   "id": "4",
-                  "text": "It is automatic by default"
+                  "text": "It is automatic by default",
+                  "text_ko": "기본적으로 자동임"
                 }
               ],
               "correctAnswerId": "1",
@@ -1734,7 +1782,7 @@ export const springCourse: Course = {
           "title": "Spring Data JPA",
           "title_ko": "스프링 데이터 JPA",
           "description": "JPA repositories and entities.",
-          "description_ko": "JPA 리포지토리와 엔티티.",
+          "description_ko": "JPA 리포지토리와 엔티티",
           "questions": [
             {
               "id": "jpa-1",
@@ -1912,19 +1960,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "To check database integrity"
+                  "text": "To check database integrity",
+                  "text_ko": "데이터베이스 무결성 확인"
                 },
                 {
                   "id": "2",
-                  "text": "To automatically populate createdDate and lastModifiedDate"
+                  "text": "To automatically populate createdDate and lastModifiedDate",
+                  "text_ko": "createdDate와 lastModifiedDate를 자동으로 채움"
                 },
                 {
                   "id": "3",
-                  "text": "To audit user logins"
+                  "text": "To audit user logins",
+                  "text_ko": "사용자 로그인 감사"
                 },
                 {
                   "id": "4",
-                  "text": "To log SQL queries"
+                  "text": "To log SQL queries",
+                  "text_ko": "SQL 쿼리 로깅"
                 }
               ],
               "correctAnswerId": "2",
@@ -1968,19 +2020,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "Uses a sequence table"
+                  "text": "Uses a sequence table",
+                  "text_ko": "시퀀스 테이블 사용"
                 },
                 {
                   "id": "2",
-                  "text": "Relies on an auto-increment column in the database"
+                  "text": "Relies on an auto-increment column in the database",
+                  "text_ko": "데이터베이스의 auto-increment 컬럼에 의존"
                 },
                 {
                   "id": "3",
-                  "text": "Generates a UUID"
+                  "text": "Generates a UUID",
+                  "text_ko": "UUID 생성"
                 },
                 {
                   "id": "4",
-                  "text": "Uses a table for ID generation"
+                  "text": "Uses a table for ID generation",
+                  "text_ko": "ID 생성을 위해 테이블 사용"
                 }
               ],
               "correctAnswerId": "2",
@@ -1996,19 +2052,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "Adding 1 to N records"
+                  "text": "Adding 1 to N records",
+                  "text_ko": "1개에서 N개의 레코드 추가"
                 },
                 {
                   "id": "2",
-                  "text": "Executing 1 query to fetch N entities, then N additional queries for related entities"
+                  "text": "Executing 1 query to fetch N entities, then N additional queries for related entities",
+                  "text_ko": "N개의 엔티티를 가져오기 위해 1개의 쿼리를 실행한 후, 연관된 엔티티를 위해 N개의 추가 쿼리 실행"
                 },
                 {
                   "id": "3",
-                  "text": "Having N+1 tables"
+                  "text": "Having N+1 tables",
+                  "text_ko": "N+1개의 테이블 존재"
                 },
                 {
                   "id": "4",
-                  "text": "An off-by-one error"
+                  "text": "An off-by-one error",
+                  "text_ko": "Off-by-one 에러"
                 }
               ],
               "correctAnswerId": "2",
@@ -2023,7 +2083,7 @@ export const springCourse: Course = {
           "title": "Transactions",
           "title_ko": "트랜잭션",
           "description": "Transaction management.",
-          "description_ko": "트랜잭션 관리.",
+          "description_ko": "트랜잭션 관리",
           "questions": [
             {
               "id": "tx-1",
@@ -2117,7 +2177,8 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "Checked exceptions"
+                  "text": "Checked exceptions",
+                  "text_ko": "Checked 예외 (Checked Exceptions)"
                 },
                 {
                   "id": "2",
@@ -2125,7 +2186,8 @@ export const springCourse: Course = {
                 },
                 {
                   "id": "3",
-                  "text": "All exceptions"
+                  "text": "All exceptions",
+                  "text_ko": "모든 예외"
                 },
                 {
                   "id": "4",
@@ -2145,19 +2207,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "To prevent data from being read"
+                  "text": "To prevent data from being read",
+                  "text_ko": "데이터가 읽히는 것을 방지"
                 },
                 {
                   "id": "2",
-                  "text": "To optimize transaction for read operations"
+                  "text": "To optimize transaction for read operations",
+                  "text_ko": "읽기 작업을 위해 트랜잭션 최적화"
                 },
                 {
                   "id": "3",
-                  "text": "To make the database read-only globally"
+                  "text": "To make the database read-only globally",
+                  "text_ko": "데이터베이스를 전역적으로 읽기 전용으로 설정"
                 },
                 {
                   "id": "4",
-                  "text": "To disable transaction"
+                  "text": "To disable transaction",
+                  "text_ko": "트랜잭션 비활성화"
                 }
               ],
               "correctAnswerId": "2",
@@ -2201,19 +2267,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "Yes"
+                  "text": "Yes",
+                  "text_ko": "네"
                 },
                 {
                   "id": "2",
-                  "text": "No, usually not with default proxy mode"
+                  "text": "No, usually not with default proxy mode",
+                  "text_ko": "아니요, 보통 기본 프록시 모드에서는 안 됨"
                 },
                 {
                   "id": "3",
-                  "text": "Only if marked with @Force"
+                  "text": "Only if marked with @Force",
+                  "text_ko": "@Force가 붙은 경우에만"
                 },
                 {
                   "id": "4",
-                  "text": "Yes, if using CGLIB"
+                  "text": "Yes, if using CGLIB",
+                  "text_ko": "네, CGLIB를 사용하는 경우"
                 }
               ],
               "correctAnswerId": "2",
@@ -2229,19 +2299,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "The second transaction starts normally"
+                  "text": "The second transaction starts normally",
+                  "text_ko": "두 번째 트랜잭션이 정상적으로 시작됨"
                 },
                 {
                   "id": "2",
-                  "text": "The second transaction annotation is ignored"
+                  "text": "The second transaction annotation is ignored",
+                  "text_ko": "두 번째 트랜잭션 어노테이션이 무시됨"
                 },
                 {
                   "id": "3",
-                  "text": "A runtime exception is thrown"
+                  "text": "A runtime exception is thrown",
+                  "text_ko": "런타임 예외 발생"
                 },
                 {
                   "id": "4",
-                  "text": "Deadlock occurs"
+                  "text": "Deadlock occurs",
+                  "text_ko": "데드락 발생"
                 }
               ],
               "correctAnswerId": "2",
@@ -2269,7 +2343,8 @@ export const springCourse: Course = {
                 },
                 {
                   "id": "4",
-                  "text": "All of the above"
+                  "text": "All of the above",
+                  "text_ko": "위의 모든 사항"
                 }
               ],
               "correctAnswerId": "3",
@@ -2285,19 +2360,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "Reading data that was never written"
+                  "text": "Reading data that was never written",
+                  "text_ko": "한 번도 기록되지 않은 데이터 읽기"
                 },
                 {
                   "id": "2",
-                  "text": "Reading uncommitted changes from another transaction"
+                  "text": "Reading uncommitted changes from another transaction",
+                  "text_ko": "다른 트랜잭션의 커밋되지 않은 변경 사항 읽기"
                 },
                 {
                   "id": "3",
-                  "text": "Reading the same data twice getting different results"
+                  "text": "Reading the same data twice getting different results",
+                  "text_ko": "같은 데이터를 두 번 읽었을 때 서로 다른 결과가 나옴"
                 },
                 {
                   "id": "4",
-                  "text": "Reading phantom rows"
+                  "text": "Reading phantom rows",
+                  "text_ko": "팬텀 로우(phantom rows) 읽기"
                 }
               ],
               "correctAnswerId": "2",
@@ -2319,7 +2398,7 @@ export const springCourse: Course = {
           "title": "Authentication",
           "title_ko": "인증",
           "description": "User authentication mechanisms.",
-          "description_ko": "사용자 인증 메커니즘.",
+          "description_ko": "사용자 인증 메커니즘",
           "questions": [
             {
               "id": "sec-1",
@@ -2329,19 +2408,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "Authentication verifies identity; Authorization checks permissions"
+                  "text": "Authentication verifies identity; Authorization checks permissions",
+                  "text_ko": "인증은 신원을 확인하고, 인가는 권한을 확인함"
                 },
                 {
                   "id": "2",
-                  "text": "Authentication checks permissions; Authorization verifies identity"
+                  "text": "Authentication checks permissions; Authorization verifies identity",
+                  "text_ko": "인증은 권한을 확인하고, 인가는 신원을 확인함"
                 },
                 {
                   "id": "3",
-                  "text": "They are the same thing"
+                  "text": "They are the same thing",
+                  "text_ko": "둘은 같은 것입니다"
                 },
                 {
                   "id": "4",
-                  "text": "Authentication is for users; Authorization is for servers"
+                  "text": "Authentication is for users; Authorization is for servers",
+                  "text_ko": "인증은 사용자를 위한 것이고, 인가는 서버를 위한 것입니다"
                 }
               ],
               "correctAnswerId": "1",
@@ -2441,19 +2524,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "The permission level"
+                  "text": "The permission level",
+                  "text_ko": "권한 수준"
                 },
                 {
                   "id": "2",
-                  "text": "The currently logged in user"
+                  "text": "The currently logged in user",
+                  "text_ko": "현재 로그인한 사용자"
                 },
                 {
                   "id": "3",
-                  "text": "The password"
+                  "text": "The password",
+                  "text_ko": "비밀번호"
                 },
                 {
                   "id": "4",
-                  "text": "The security configuration"
+                  "text": "The security configuration",
+                  "text_ko": "보안 설정"
                 }
               ],
               "correctAnswerId": "2",
@@ -2581,19 +2668,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "Database encryption"
+                  "text": "Database encryption",
+                  "text_ko": "데이터베이스 암호화"
                 },
                 {
                   "id": "2",
-                  "text": "Delegated authorization"
+                  "text": "Delegated authorization",
+                  "text_ko": "위임된 인가"
                 },
                 {
                   "id": "3",
-                  "text": "Session management"
+                  "text": "Session management",
+                  "text_ko": "세션 관리"
                 },
                 {
                   "id": "4",
-                  "text": "Password hashing"
+                  "text": "Password hashing",
+                  "text_ko": "비밀번호 해싱"
                 }
               ],
               "correctAnswerId": "2",
@@ -2608,7 +2699,7 @@ export const springCourse: Course = {
           "title": "Security Config",
           "title_ko": "보안 설정",
           "description": "Configuring Spring Security.",
-          "description_ko": "스프링 시큐리티 설정.",
+          "description_ko": "스프링 시큐리티 설정",
           "questions": [
             {
               "id": "config-1",
@@ -2618,19 +2709,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "A list of users"
+                  "text": "A list of users",
+                  "text_ko": "사용자 목록"
                 },
                 {
                   "id": "2",
-                  "text": "A chain of filters that process the request for security"
+                  "text": "A chain of filters that process the request for security",
+                  "text_ko": "보안을 위해 요청을 처리하는 필터 체인"
                 },
                 {
                   "id": "3",
-                  "text": "A database table"
+                  "text": "A database table",
+                  "text_ko": "데이터베이스 테이블"
                 },
                 {
                   "id": "4",
-                  "text": "A password algorithm"
+                  "text": "A password algorithm",
+                  "text_ko": "비밀번호 알고리즘"
                 }
               ],
               "correctAnswerId": "2",
@@ -2654,7 +2749,8 @@ export const springCourse: Course = {
                 },
                 {
                   "id": "3",
-                  "text": "Both 1 and 2"
+                  "text": "Both 1 and 2",
+                  "text_ko": "1과 2 모두"
                 },
                 {
                   "id": "4",
@@ -2714,7 +2810,8 @@ export const springCourse: Course = {
                 },
                 {
                   "id": "4",
-                  "text": "All of the above"
+                  "text": "All of the above",
+                  "text_ko": "위의 모든 사항"
                 }
               ],
               "correctAnswerId": "4",
@@ -2758,19 +2855,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "Checks permission before method execution"
+                  "text": "Checks permission before method execution",
+                  "text_ko": "메서드 실행 전 권한 확인"
                 },
                 {
                   "id": "2",
-                  "text": "Checks permission after method execution"
+                  "text": "Checks permission after method execution",
+                  "text_ko": "메서드 실행 후 권한 확인"
                 },
                 {
                   "id": "3",
-                  "text": "Checks authentication only"
+                  "text": "Checks authentication only",
+                  "text_ko": "인증만 확인"
                 },
                 {
                   "id": "4",
-                  "text": "Logs the method execution"
+                  "text": "Logs the method execution",
+                  "text_ko": "메서드 실행 기록"
                 }
               ],
               "correctAnswerId": "2",
@@ -2814,19 +2915,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "To match Ant build files"
+                  "text": "To match Ant build files",
+                  "text_ko": "Ant 빌드 파일을 매칭하기 위해"
                 },
                 {
                   "id": "2",
-                  "text": "To match URL patterns for security configuration"
+                  "text": "To match URL patterns for security configuration",
+                  "text_ko": "보안 설정을 위한 URL 패턴을 매칭하기 위해"
                 },
                 {
                   "id": "3",
-                  "text": "To match user names"
+                  "text": "To match user names",
+                  "text_ko": "사용자 이름을 매칭하기 위해"
                 },
                 {
                   "id": "4",
-                  "text": "To match HTTP headers"
+                  "text": "To match HTTP headers",
+                  "text_ko": "HTTP 헤더를 매칭하기 위해"
                 }
               ],
               "correctAnswerId": "2",
@@ -2870,19 +2975,23 @@ export const springCourse: Course = {
               "options": [
                 {
                   "id": "1",
-                  "text": "Storing password in browser"
+                  "text": "Storing password in browser",
+                  "text_ko": "브라우저에 비밀번호 저장"
                 },
                 {
                   "id": "2",
-                  "text": "Remembering the user across sessions using a cookie"
+                  "text": "Remembering the user across sessions using a cookie",
+                  "text_ko": "쿠키를 사용하여 세션 간에 사용자를 기억"
                 },
                 {
                   "id": "3",
-                  "text": "Logging user activity"
+                  "text": "Logging user activity",
+                  "text_ko": "사용자 활동 기록"
                 },
                 {
                   "id": "4",
-                  "text": "Reminding user to change password"
+                  "text": "Reminding user to change password",
+                  "text_ko": "사용자에게 비밀번호 변경 알림"
                 }
               ],
               "correctAnswerId": "2",

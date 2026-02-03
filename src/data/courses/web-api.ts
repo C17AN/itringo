@@ -17,7 +17,7 @@ export const webApiCourse: Course = {
           title: 'DOM Fundamentals',
           title_ko: 'DOM 기초',
           description: 'Master the Document Object Model structure and manipulation.',
-          description_ko: '문서 객체 모델(DOM) 구조와 조작법 마스터하기.',
+          description_ko: '문서 객체 모델(DOM) 구조와 조작법 마스터하기',
           questions: [
             {
               id: 'q-dom-1',
@@ -60,7 +60,7 @@ export const webApiCourse: Course = {
           title: 'Browser BOM',
           title_ko: '브라우저 객체 모델(BOM)',
           description: 'Window, Navigator, Location, and History APIs.',
-          description_ko: 'Window, Navigator, Location, History API 이해하기.',
+          description_ko: 'Window, Navigator, Location, History API 이해하기',
           questions: [
             {
               id: 'q-bom-1',
@@ -85,7 +85,7 @@ export const webApiCourse: Course = {
           title: 'Events System',
           title_ko: '이벤트 시스템',
           description: 'Handling user interactions and custom events.',
-          description_ko: '사용자 상호작용 및 커스텀 이벤트 처리.',
+          description_ko: '사용자 상호작용 및 커스텀 이벤트 처리',
           questions: [
             {
               id: 'q-evt-1',
@@ -111,7 +111,7 @@ export const webApiCourse: Course = {
           title: 'Timers & Scheduling',
           title_ko: '타이머 & 스케줄링',
           description: 'setTimeout, setInterval, and requestAnimationFrame.',
-          description_ko: 'setTimeout, setInterval, requestAnimationFrame 활용.',
+          description_ko: 'setTimeout, setInterval, requestAnimationFrame 활용',
           questions: [
             {
               id: 'q-timer-1',
@@ -136,7 +136,7 @@ export const webApiCourse: Course = {
           title: 'Console API',
           title_ko: '콘솔 API',
           description: 'Beyond console.log: table, group, and time.',
-          description_ko: 'log 외에 table, group, time 등 다양한 기능.',
+          description_ko: 'log 외에 table, group, time 등 다양한 기능',
           questions: [
             {
               id: 'q-console-1',
@@ -169,7 +169,7 @@ export const webApiCourse: Course = {
           title: 'Modern Fetching',
           title_ko: '최신 데이터 요청',
           description: 'Making network requests with the Fetch API.',
-          description_ko: 'Fetch API로 네트워크 요청 보내기.',
+          description_ko: 'Fetch API로 네트워크 요청 보내기',
           questions: [
             {
               id: 'q-fetch-1',
@@ -194,7 +194,7 @@ export const webApiCourse: Course = {
           title: 'URL & Parameters',
           title_ko: 'URL & 파라미터',
           description: 'Parsing and modifying URLs easily.',
-          description_ko: 'URL 파싱 및 수정하기.',
+          description_ko: 'URL 파싱 및 수정하기',
           questions: [
             {
               id: 'q-url-1',
@@ -220,7 +220,7 @@ export const webApiCourse: Course = {
           title: 'Client Storage',
           title_ko: '클라이언트 저장소',
           description: 'Persisting data with LocalStorage and SessionStorage.',
-          description_ko: 'LocalStorage와 SessionStorage로 데이터 저장하기.',
+          description_ko: 'LocalStorage와 SessionStorage로 데이터 저장하기',
           questions: [
             {
               id: 'q-store-1',
@@ -245,7 +245,7 @@ export const webApiCourse: Course = {
           title: 'Forms & Files',
           title_ko: '폼 & 파일',
           description: 'Handling file uploads and form data.',
-          description_ko: '파일 업로드 및 폼 데이터 처리.',
+          description_ko: '파일 업로드 및 폼 데이터 처리',
           questions: [
             {
               id: 'q-form-1',
@@ -270,7 +270,7 @@ export const webApiCourse: Course = {
           title: 'Real-time Comms',
           title_ko: '실시간 통신',
           description: 'WebSockets and Server-sent Events.',
-          description_ko: '웹소켓과 서버 전송 이벤트.',
+          description_ko: '웹소켓과 서버 전송 이벤트',
           questions: [
             {
               id: 'q-sock-1',
@@ -302,7 +302,7 @@ export const webApiCourse: Course = {
           title: 'Viewport Observers',
           title_ko: '뷰포트 관찰자',
           description: 'Detecting visibility and resizing efficiently.',
-          description_ko: '화면 가시성 및 크기 변경 감지.',
+          description_ko: '화면 가시성 및 크기 변경 감지',
           questions: [
             {
               id: 'q-obs-1',
@@ -327,7 +327,7 @@ export const webApiCourse: Course = {
           title: 'Clipboard & Input',
           title_ko: '클립보드 & 입력',
           description: 'Reading and writing to the system clipboard.',
-          description_ko: '시스템 클립보드 읽기/쓰기.',
+          description_ko: '시스템 클립보드 읽기/쓰기',
           questions: [
             {
               id: 'q-clip-1',
@@ -353,7 +353,7 @@ export const webApiCourse: Course = {
           title: 'Drag & Drop',
           title_ko: '드래그 앤 드롭',
           description: 'Native drag and drop interactions.',
-          description_ko: '네이티브 드래그 앤 드롭 구현.',
+          description_ko: '네이티브 드래그 앤 드롭 구현',
           questions: [
             {
               id: 'q-dnd-1',
@@ -378,7 +378,7 @@ export const webApiCourse: Course = {
           title: 'Screen Control',
           title_ko: '화면 제어',
           description: 'Fullscreen, PiP, and Wake Lock.',
-          description_ko: '전체화면, PiP, 화면 꺼짐 방지.',
+          description_ko: '전체화면, PiP, 화면 꺼짐 방지',
           questions: [
             {
               id: 'q-scr-1',
@@ -403,7 +403,7 @@ export const webApiCourse: Course = {
           title: 'Notifications',
           title_ko: '알림',
           description: 'System-level notifications and badging.',
-          description_ko: '시스템 알림 및 배지.',
+          description_ko: '시스템 알림 및 배지',
           questions: [
             {
               id: 'q-not-1',
@@ -436,7 +436,7 @@ export const webApiCourse: Course = {
           title: 'Geolocation',
           title_ko: '위치 정보',
           description: 'Accessing user location.',
-          description_ko: '사용자 위치 접근하기.',
+          description_ko: '사용자 위치 접근하기',
           questions: [
             {
               id: 'q-geo-1',
@@ -462,7 +462,7 @@ export const webApiCourse: Course = {
           title: 'Hardware Feedback',
           title_ko: '하드웨어 피드백',
           description: 'Vibration API for haptic feedback.',
-          description_ko: '진동(햅틱) 피드백.',
+          description_ko: '진동(햅틱) 피드백',
           questions: [
             {
               id: 'q-vib-1',
@@ -488,7 +488,7 @@ export const webApiCourse: Course = {
           title: 'System Status',
           title_ko: '시스템 상태',
           description: 'Battery Status and Network Information.',
-          description_ko: '배터리 상태 및 네트워크 정보.',
+          description_ko: '배터리 상태 및 네트워크 정보',
           questions: [
             {
               id: 'q-batt-1',
@@ -513,7 +513,7 @@ export const webApiCourse: Course = {
           title: 'Media Capture',
           title_ko: '미디어 캡처',
           description: 'Accessing Camera and Microphone.',
-          description_ko: '카메라 및 마이크 접근.',
+          description_ko: '카메라 및 마이크 접근',
           questions: [
             {
               id: 'q-media-1',
@@ -538,7 +538,7 @@ export const webApiCourse: Course = {
           title: 'Device Sensors',
           title_ko: '기기 센서',
           description: 'Orientation and Motion.',
-          description_ko: '방향 및 동작 감지.',
+          description_ko: '방향 및 동작 감지',
           questions: [
             {
               id: 'q-sens-1',
@@ -570,7 +570,7 @@ export const webApiCourse: Course = {
           title: 'Multithreading',
           title_ko: '멀티스레딩',
           description: 'Offloading tasks with Web Workers.',
-          description_ko: 'Web Worker로 작업 분산하기.',
+          description_ko: 'Web Worker로 작업 분산하기',
           questions: [
             {
               id: 'q-work-1',
@@ -596,7 +596,7 @@ export const webApiCourse: Course = {
           title: 'Offline Web',
           title_ko: '오프라인 웹',
           description: 'Service Workers and Cache API.',
-          description_ko: '서비스 워커와 캐시 API.',
+          description_ko: '서비스 워커와 캐시 API',
           questions: [
             {
               id: 'q-sw-1',
@@ -621,7 +621,7 @@ export const webApiCourse: Course = {
           title: 'Performance',
           title_ko: '성능',
           description: 'Measuring web performance.',
-          description_ko: '웹 성능 측정하기.',
+          description_ko: '웹 성능 측정하기',
           questions: [
             {
               id: 'q-perf-1',
@@ -646,7 +646,7 @@ export const webApiCourse: Course = {
           title: 'Page Lifecycle',
           title_ko: '페이지 생명주기',
           description: 'Detecting when a page is hidden.',
-          description_ko: '페이지 가시성 감지.',
+          description_ko: '페이지 가시성 감지',
           questions: [
             {
               id: 'q-vis-1',
@@ -678,7 +678,7 @@ export const webApiCourse: Course = {
           title: 'Web Audio & Speech',
           title_ko: '웹 오디오 & 음성',
           description: 'Speech Synthesis (TTS) and Audio Context.',
-          description_ko: '음성 합성(TTS)과 오디오 컨텍스트.',
+          description_ko: '음성 합성(TTS)과 오디오 컨텍스트',
           questions: [
             {
               id: 'q-speech-1',
@@ -703,7 +703,7 @@ export const webApiCourse: Course = {
           title: 'Experimental Gems',
           title_ko: '실험적 기능',
           description: 'Web Share, EyeDropper, and more.',
-          description_ko: '웹 공유, 스포이드 등.',
+          description_ko: '웹 공유, 스포이드 등',
           questions: [
             {
               id: 'q-share-1',
@@ -744,7 +744,7 @@ export const webApiCourse: Course = {
           title: 'Web Components',
           title_ko: '웹 컴포넌트',
           description: 'Custom Elements and Shadow DOM.',
-          description_ko: '커스텀 엘리먼트와 섀도우 돔.',
+          description_ko: '커스텀 엘리먼트와 섀도우 돔',
           questions: [
             {
               id: 'q-comp-1',

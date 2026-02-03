@@ -17,7 +17,7 @@ export const osCourse: Course = {
           title: 'Resources',
           title_ko: '리소스',
           description: 'Understanding CPU, Memory, and Disk usage.',
-          description_ko: 'CPU, 메모리, 디스크 사용량 이해하기.',
+          description_ko: 'CPU, 메모리, 디스크 사용량 이해하기',
           questions: [
             {
               id: 'q-load-1',
@@ -75,7 +75,7 @@ export const osCourse: Course = {
           title: 'Memory Management',
           title_ko: '메모리 관리',
           description: 'Swap, Buffers, and OOM.',
-          description_ko: '스왑, 버퍼, OOM 이해하기.',
+          description_ko: '스왑, 버퍼, OOM 이해하기',
           questions: [
             {
               id: 'q-swap-1',
@@ -123,7 +123,7 @@ export const osCourse: Course = {
           title: 'Links',
           title_ko: '링크',
           description: 'Hard links vs Symbolic links.',
-          description_ko: '하드 링크와 심볼릭 링크.',
+          description_ko: '하드 링크와 심볼릭 링크',
           questions: [
             {
               id: 'q-symlink-1',
@@ -131,10 +131,10 @@ export const osCourse: Course = {
               question: 'Which type of link breaks if the original file is deleted?',
               question_ko: '원본 파일이 삭제되면 깨지는 링크 종류는?',
               options: [
-                { id: 'opt1', text: 'Hard link' },
-                { id: 'opt2', text: 'Symbolic link (Soft link)' },
-                { id: 'opt3', text: 'Hyperlink' },
-                { id: 'opt4', text: 'Deep link' },
+                { id: 'opt1', text: 'Hard link', text_ko: '하드 링크' },
+                { id: 'opt2', text: 'Symbolic link (Soft link)', text_ko: '심볼릭 링크 (소프트 링크)' },
+                { id: 'opt3', text: 'Hyperlink', text_ko: '하이퍼링크' },
+                { id: 'opt4', text: 'Deep link', text_ko: '딥 링크' },
               ],
               correctAnswerId: 'opt2',
               explanation: "A symbolic link points to the path of the original file. If the original is moved or deleted, the link becomes broken.",

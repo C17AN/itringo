@@ -17,7 +17,7 @@ export const jsCourse: Course = {
           title: 'Variables',
           title_ko: '변수',
           description: 'var, let, and const declarations.',
-          description_ko: 'var, let, const 선언에 대해 알아봅니다.',
+          description_ko: 'var, let, const 선언에 대해 알아봅니다',
           questions: [
             {
               id: 'q1',
@@ -111,8 +111,8 @@ export const jsCourse: Course = {
               question: 'What does an async function always return?',
               options: [
                 { id: 'opt1', text: 'undefined' },
-                { id: 'opt2', text: 'The return value directly' },
-                { id: 'opt3', text: 'A Promise' },
+                { id: 'opt2', text: 'The return value directly', text_ko: '반환값 직접 반환' },
+                { id: 'opt3', text: 'A Promise', text_ko: 'Promise 객체' },
                 { id: 'opt4', text: 'null' },
               ],
               correctAnswerId: 'opt3',

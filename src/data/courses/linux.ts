@@ -17,7 +17,7 @@ export const linuxCourse: Course = {
           title: 'Basic Operations',
           title_ko: '기본 파일 작업',
           description: 'Copy, Move, Remove, and Create.',
-          description_ko: '복사, 이동, 삭제, 생성의 모든 것.',
+          description_ko: '복사, 이동, 삭제, 생성의 모든 것',
           questions: [
             {
               id: 'q-cp-1',
@@ -75,10 +75,10 @@ export const linuxCourse: Course = {
               question: 'Does `mv` move directories by default without extra flags?',
               question_ko: '`mv` 명령어는 별도 옵션 없이 디렉토리를 이동시킬 수 있나요?',
               options: [
-                { id: 'opt1', text: 'Yes' },
-                { id: 'opt2', text: 'No, needs -r' },
-                { id: 'opt3', text: 'No, needs -d' },
-                { id: 'opt4', text: 'Only if empty' },
+                { id: 'opt1', text: 'Yes', text_ko: '네' },
+                { id: 'opt2', text: 'No, needs -r', text_ko: '아니요, -r 옵션이 필요함' },
+                { id: 'opt3', text: 'No, needs -d', text_ko: '아니요, -d 옵션이 필요함' },
+                { id: 'opt4', text: 'Only if empty', text_ko: '비어 있는 경우에만' },
               ],
               correctAnswerId: 'opt1',
               explanation: "mv moves files and directories naturally without recursion flags.",
@@ -91,10 +91,10 @@ export const linuxCourse: Course = {
               question: 'What happens if you `touch` an existing file?',
               question_ko: '이미 존재하는 파일에 `touch` 명령어를 사용하면 어떻게 되나요?',
               options: [
-                { id: 'opt1', text: 'File is deleted' },
-                { id: 'opt2', text: 'File content is cleared' },
-                { id: 'opt3', text: 'Timestamps are updated' },
-                { id: 'opt4', text: 'Error occurs' },
+                { id: 'opt1', text: 'File is deleted', text_ko: '파일이 삭제됨' },
+                { id: 'opt2', text: 'File content is cleared', text_ko: '파일 내용이 비워짐' },
+                { id: 'opt3', text: 'Timestamps are updated', text_ko: '타임스탬프가 업데이트됨' },
+                { id: 'opt4', text: 'Error occurs', text_ko: '에러가 발생함' },
               ],
               correctAnswerId: 'opt3',
               explanation: "touch updates the access and modification times of the file. Content remains unchanged.",
@@ -125,7 +125,7 @@ export const linuxCourse: Course = {
           title: 'Advanced Search',
           title_ko: '고급 검색',
           description: 'Finding files by name, size, time.',
-          description_ko: '이름, 크기, 시간으로 파일 찾기.',
+          description_ko: '이름, 크기, 시간으로 파일 찾기',
           questions: [
             {
               id: 'q-find-name',
@@ -219,7 +219,7 @@ export const linuxCourse: Course = {
           title: 'Permissions & Ownership',
           title_ko: '권한 및 소유권',
           description: 'Chmod, Chown, Umask.',
-          description_ko: '파일 권한과 소유권 관리.',
+          description_ko: '파일 권한과 소유권 관리',
           questions: [
             {
               id: 'q-chmod-num',
@@ -294,10 +294,10 @@ export const linuxCourse: Course = {
               question: 'What does `umask` determine?',
               question_ko: '`umask`는 무엇을 결정하나요?',
               options: [
-                { id: 'opt1', text: 'Default file permissions' },
-                { id: 'opt2', text: 'File size limit' },
-                { id: 'opt3', text: 'User password expiry' },
-                { id: 'opt4', text: 'Process priority' },
+                { id: 'opt1', text: 'Default file permissions', text_ko: '기본 파일 권한' },
+                { id: 'opt2', text: 'File size limit', text_ko: '파일 크기 제한' },
+                { id: 'opt3', text: 'User password expiry', text_ko: '사용자 비밀번호 만료' },
+                { id: 'opt4', text: 'Process priority', text_ko: '프로세스 우선순위' },
               ],
               correctAnswerId: 'opt1',
               explanation: "umask sets the default permissions for newly created files and directories.",
@@ -326,10 +326,10 @@ export const linuxCourse: Course = {
               question: 'What does SetUID do on an executable?',
               question_ko: '실행 파일에 SetUID가 설정되면 어떤 효과가 있나요?',
               options: [
-                { id: 'opt1', text: 'Runs as the user who executed it' },
-                { id: 'opt2', text: 'Runs with the privileges of the file owner' },
-                { id: 'opt3', text: 'Runs faster' },
-                { id: 'opt4', text: 'Runs in background' },
+                { id: 'opt1', text: 'Runs as the user who executed it', text_ko: '실행한 사용자의 권한으로 실행됨' },
+                { id: 'opt2', text: 'Runs with the privileges of the file owner', text_ko: '파일 소유자의 권한으로 실행됨' },
+                { id: 'opt3', text: 'Runs faster', text_ko: '더 빠르게 실행됨' },
+                { id: 'opt4', text: 'Runs in background', text_ko: '백그라운드에서 실행됨' },
               ],
               correctAnswerId: 'opt2',
               explanation: "SetUID executes the file with the permissions of the file owner (e.g., passwd).",
@@ -342,10 +342,10 @@ export const linuxCourse: Course = {
               question: 'What does "d" indicate in "drwxr-xr-x"?',
               question_ko: '"drwxr-xr-x"에서 맨 앞의 "d"는 무엇을 의미하나요?',
               options: [
-                { id: 'opt1', text: 'Delete' },
-                { id: 'opt2', text: 'Directory' },
-                { id: 'opt3', text: 'Data' },
-                { id: 'opt4', text: 'Default' },
+                { id: 'opt1', text: 'Delete', text_ko: '삭제' },
+                { id: 'opt2', text: 'Directory', text_ko: '디렉토리' },
+                { id: 'opt3', text: 'Data', text_ko: '데이터' },
+                { id: 'opt4', text: 'Default', text_ko: '기본값' },
               ],
               correctAnswerId: 'opt2',
               explanation: "The first character indicates file type. 'd' is directory, '-' is file.",
@@ -480,7 +480,7 @@ export const linuxCourse: Course = {
           title: 'Grep Mastery',
           title_ko: 'Grep 마스터',
           description: 'Searching text efficiently.',
-          description_ko: '텍스트 효율적으로 검색하기.',
+          description_ko: '텍스트 효율적으로 검색하기',
           questions: [
             {
               id: 'q-grep-i',
@@ -544,7 +544,7 @@ export const linuxCourse: Course = {
           title: 'Stream Editing',
           title_ko: '스트림 편집',
           description: 'Sed, Awk, Cut, Sort, Uniq.',
-          description_ko: 'Sed, Awk, Cut, Sort, Uniq 활용.',
+          description_ko: 'Sed, Awk, Cut, Sort, Uniq 활용',
           questions: [
             {
               id: 'q-sed-sub',
@@ -611,7 +611,7 @@ export const linuxCourse: Course = {
           title: 'Text Viewing & Manipulation',
           title_ko: '텍스트 보기 및 조작',
           description: 'Head, Tail, Less, Wc, Diff.',
-          description_ko: '파일 내용 확인 및 간단한 조작.',
+          description_ko: '파일 내용 확인 및 간단한 조작',
           questions: [
             {
               id: 'q-cat',
@@ -873,7 +873,7 @@ export const linuxCourse: Course = {
           title: 'System Info',
           title_ko: '시스템 정보',
           description: 'CPU, Memory, Disk info.',
-          description_ko: 'CPU, 메모리, 디스크 정보 확인.',
+          description_ko: 'CPU, 메모리, 디스크 정보 확인',
           questions: [
             {
               id: 'q-uname',
@@ -939,14 +939,17 @@ export const linuxCourse: Course = {
           title: 'Process Control',
           title_ko: '프로세스 제어',
           description: 'Jobs, BG, FG, Nice.',
-          description_ko: '백그라운드 작업 및 우선순위.',
+          description_ko: '백그라운드 작업 및 우선순위',
           questions: [
             {
               id: 'q-bg',
               type: 'multiple-choice',
               question: 'Send a stopped job to the background?',
               question_ko: '중지된(Stopped) 작업을 백그라운드에서 계속 실행하게 하려면?',
-              options: [{ id: 'opt1', text: 'fg' }, { id: 'opt2', text: 'bg' }, { id: 'opt3', text: 'jobs' }, { id: 'opt4', text: 'start' }],
+              options: [                { id: 'opt1', text: 'fg' },
+                { id: 'opt2', text: 'bg' },
+                { id: 'opt3', text: 'jobs' },
+                { id: 'opt4', text: 'start', text_ko: '시작' }],
               correctAnswerId: 'opt2',
               explanation: "bg resumes suspended jobs in the background.",
               explanation_ko: "bg 명령어는 Ctrl+Z로 멈춘 작업을 백그라운드 상태로 전환하여 계속 실행합니다.",
@@ -957,7 +960,10 @@ export const linuxCourse: Course = {
               type: 'multiple-choice',
               question: 'Bring a background job to the foreground?',
               question_ko: '백그라운드 작업을 포그라운드로 가져오려면?',
-              options: [{ id: 'opt1', text: 'bg' }, { id: 'opt2', text: 'fg' }, { id: 'opt3', text: 'top' }, { id: 'opt4', text: 'front' }],
+              options: [                { id: 'opt1', text: 'bg' },
+                { id: 'opt2', text: 'fg' },
+                { id: 'opt3', text: 'top' },
+                { id: 'opt4', text: 'front', text_ko: '포그라운드' }],
               correctAnswerId: 'opt2',
               explanation: "fg moves a background job to the foreground.",
               explanation_ko: "fg 명령어는 백그라운드에 있는 작업을 다시 터미널 제어권을 가진 포그라운드로 가져옵니다.",
@@ -1003,7 +1009,7 @@ export const linuxCourse: Course = {
           title: 'System Monitoring',
           title_ko: '시스템 모니터링',
           description: 'Top, Ps, Kill, Watch.',
-          description_ko: '시스템 상태 및 프로세스 감시.',
+          description_ko: '시스템 상태 및 프로세스 감시',
           questions: [
             {
               id: 'q-top',
@@ -1261,7 +1267,7 @@ export const linuxCourse: Course = {
           title: 'Network Commands',
           title_ko: '네트워크 명령어',
           description: 'Ping, IP, SSH, SCP.',
-          description_ko: 'Ping, IP, SSH, SCP 활용.',
+          description_ko: 'Ping, IP, SSH, SCP 활용',
           questions: [
             {
               id: 'q-ping-c',
@@ -1329,7 +1335,7 @@ export const linuxCourse: Course = {
           title: 'Security Basics',
           title_ko: '보안 기초',
           description: 'Sudo, Passwd, Su.',
-          description_ko: 'Sudo, Passwd, Su 사용법.',
+          description_ko: 'Sudo, Passwd, Su 사용법',
           questions: [
             {
               id: 'q-sudo',
@@ -1371,7 +1377,7 @@ export const linuxCourse: Course = {
           title: 'Network Troubleshooting',
           title_ko: '네트워크 트러블슈팅',
           description: 'Netstat, Dig, Curl, Nc.',
-          description_ko: '네트워크 상태 진단 및 디버깅.',
+          description_ko: '네트워크 상태 진단 및 디버깅',
           questions: [
             {
               id: 'q-netstat-listen',
@@ -1635,7 +1641,7 @@ export const linuxCourse: Course = {
           title: 'User Management',
           title_ko: '사용자 관리',
           description: 'Creating and modifying users.',
-          description_ko: '사용자 생성 및 수정.',
+          description_ko: '사용자 생성 및 수정',
           questions: [
             {
               id: 'q-useradd',
@@ -1678,7 +1684,7 @@ export const linuxCourse: Course = {
           title: 'Package Management',
           title_ko: '패키지 관리',
           description: 'Apt and Yum basics.',
-          description_ko: 'Apt와 Yum 기초.',
+          description_ko: 'Apt와 Yum 기초',
           questions: [
             {
               id: 'q-apt-update',
@@ -1723,7 +1729,7 @@ export const linuxCourse: Course = {
           title: 'Archiving',
           title_ko: '아카이빙',
           description: 'Tar, Gzip, Zip.',
-          description_ko: 'Tar, Gzip, Zip 압축 관리.',
+          description_ko: 'Tar, Gzip, Zip 압축 관리',
           questions: [
             {
               id: 'q-tar-x',
@@ -1768,7 +1774,7 @@ export const linuxCourse: Course = {
           title: 'Shell & Environment',
           title_ko: '쉘 및 환경변수',
           description: 'Env, Export, Alias, Redirection.',
-          description_ko: '환경변수 설정 및 입출력 재지정.',
+          description_ko: '환경변수 설정 및 입출력 재지정',
           questions: [
             {
               id: 'q-env',
@@ -2034,7 +2040,7 @@ export const linuxCourse: Course = {
           title: 'Disk Management',
           title_ko: '디스크 관리',
           description: 'Mount, Fdisk, Mkfs, Lsblk.',
-          description_ko: '파티션, 포맷, 마운트 관리.',
+          description_ko: '파티션, 포맷, 마운트 관리',
           questions: [
             {
               id: 'q-lsblk',
@@ -2287,7 +2293,7 @@ export const linuxCourse: Course = {
           title: 'Hardware Info',
           title_ko: '하드웨어 정보',
           description: 'Lscpu, Lspci, Dmesg, Dmidecode.',
-          description_ko: 'CPU, 메모리, 장치 정보 확인.',
+          description_ko: 'CPU, 메모리, 장치 정보 확인',
           questions: [
             {
               id: 'q-lscpu',
@@ -2464,7 +2470,7 @@ export const linuxCourse: Course = {
           title: 'Advanced Shell',
           title_ko: '고급 쉘 스크립팅',
           description: 'Regex, Arrays, Traps, Debugging.',
-          description_ko: '정규식, 배열, 트랩, 디버깅.',
+          description_ko: '정규식, 배열, 트랩, 디버깅',
           questions: [
             {
               id: 'q-bash-array',
@@ -2805,7 +2811,7 @@ export const linuxCourse: Course = {
           title: 'Advanced Networking',
           title_ko: '고급 네트워크',
           description: 'Tunneling, Firewall, DNS.',
-          description_ko: '터널링, 방화벽, DNS 심화.',
+          description_ko: '터널링, 방화벽, DNS 심화',
           questions: [
             {
               id: 'q-ssh-L',
@@ -3145,7 +3151,7 @@ export const linuxCourse: Course = {
           title: 'System Admin',
           title_ko: '시스템 관리',
           description: 'Systemd, Logs, Users.',
-          description_ko: 'Systemd, 로그, 사용자 관리 심화.',
+          description_ko: 'Systemd, 로그, 사용자 관리 심화',
           questions: [
             {
               id: 'q-systemctl-start',
@@ -3480,7 +3486,7 @@ export const linuxCourse: Course = {
           title: 'Security Hardening',
           title_ko: '보안 강화',
           description: 'SELinux, Permissions, ACL.',
-          description_ko: 'SELinux, 특수권한, ACL.',
+          description_ko: 'SELinux, 특수권한, ACL',
           questions: [
             {
               id: 'q-sestatus',
@@ -3816,7 +3822,7 @@ export const linuxCourse: Course = {
           title: 'Containers & Virt',
           title_ko: '컨테이너 & 가상화',
           description: 'Docker, Podman, KVM.',
-          description_ko: '도커, 포드맨, 가상화 기초.',
+          description_ko: '도커, 포드맨, 가상화 기초',
           questions: [
             {
               id: 'q-docker-run',

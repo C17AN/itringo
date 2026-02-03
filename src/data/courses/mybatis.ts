@@ -17,7 +17,7 @@ export const mybatisCourse: Course = {
           title: 'XML Mapping',
           title_ko: 'XML 매핑',
           description: 'Configuring SQL maps in XML.',
-          description_ko: 'XML에서 SQL 맵 설정하기.',
+          description_ko: 'XML에서 SQL 맵 설정하기',
           questions: [
             {
               id: 'q-mybatis-1',
@@ -43,7 +43,7 @@ export const mybatisCourse: Course = {
           title: 'Dynamic SQL',
           title_ko: '동적 SQL',
           description: 'Using if, choose, when, otherwise.',
-          description_ko: 'if, choose, when, otherwise 사용법.',
+          description_ko: 'if, choose, when, otherwise 사용법',
           questions: [
             {
               id: 'q-mybatis-dyn-1',
