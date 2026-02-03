@@ -1,0 +1,25 @@
+{
+  "iterations": [
+    {
+      "iteration": 1,
+      "startedAt": "2026-02-03T04:12:01.965Z",
+      "endedAt": "2026-02-03T04:12:07.844Z",
+      "durationMs": 4854,
+      "toolsUsed": {},
+      "filesModified": [],
+      "exitCode": 0,
+      "completionDetected": false,
+      "errors": [
+        "ProviderModelNotFoundError: ProviderModelNotFoundError"
+      ]
+    }
+  ],
+  "totalDurationMs": 4854,
+  "struggleIndicators": {
+    "repeatedErrors": {
+      "ProviderModelNotFoundError: ProviderModelNotFoundError": 1
+    },
+    "noProgressIterations": 1,
+    "shortIterations": 1
+  }
+}
