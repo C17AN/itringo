@@ -2453,6 +2453,1698 @@ export const linuxCourse: Course = {
           ]
         }
       ]
-    }
+    },
+    {
+      id: 'linux-ch7',
+      title: 'Advanced Operations',
+      title_ko: '고급 리눅스 운영',
+      units: [
+        {
+          id: 'linux-adv-shell',
+          title: 'Advanced Shell',
+          title_ko: '고급 쉘 스크립팅',
+          description: 'Regex, Arrays, Traps, Debugging.',
+          description_ko: '정규식, 배열, 트랩, 디버깅.',
+          questions: [
+            {
+              id: 'q-bash-array',
+              type: 'multiple-choice',
+              question: 'How to declare an array in Bash?',
+              question_ko: 'Bash에서 배열을 선언하는 올바른 방법은?',
+              codeSnippet: 'arr=____',
+              options: [
+                { id: 'opt1', text: '(1 2 3)' },
+                { id: 'opt2', text: '[1, 2, 3]' },
+                { id: 'opt3', text: '{1, 2, 3}' },
+                { id: 'opt4', text: '1 2 3' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "Bash arrays are defined using parentheses: arr=(value1 value2).",
+              explanation_ko: "Bash 배열은 소괄호를 사용하여 선언합니다. 예: arr=(1 2 3)",
+              mdnUrl: 'https://www.gnu.org/software/bash/manual/html_node/Arrays.html'
+            },
+            {
+              id: 'q-bash-len',
+              type: 'multiple-choice',
+              question: 'Get the length of a string variable?',
+              question_ko: '문자열 변수의 길이를 구하는 문법은?',
+              codeSnippet: 'echo ${____var}',
+              options: [
+                { id: 'opt1', text: '#' },
+                { id: 'opt2', text: '@' },
+                { id: 'opt3', text: '*' },
+                { id: 'opt4', text: '%' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "${#var} returns the length of the string in variable var.",
+              explanation_ko: "${#변수명}은 변수 값(문자열)의 길이를 반환합니다.",
+              mdnUrl: 'https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html'
+            },
+            {
+              id: 'q-bash-trap',
+              type: 'multiple-choice',
+              question: 'Catch signals in a script?',
+              question_ko: '스크립트 실행 중 시그널(예: Ctrl+C)을 잡아내려면?',
+              options: [
+                { id: 'opt1', text: 'catch' },
+                { id: 'opt2', text: 'trap' },
+                { id: 'opt3', text: 'signal' },
+                { id: 'opt4', text: 'on' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "trap command allows you to execute code when a signal is received.",
+              explanation_ko: "trap 명령어를 사용하면 종료 시그널 등을 감지하여 정리 작업을 수행할 수 있습니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/trap.1p.html'
+            },
+            {
+              id: 'q-bash-debug',
+              type: 'multiple-choice',
+              question: 'Enable debugging mode in a script?',
+              question_ko: '스크립트 디버깅 모드(실행 과정 출력)를 켜려면?',
+              codeSnippet: 'set ____',
+              options: [
+                { id: 'opt1', text: '-x' },
+                { id: 'opt2', text: '-d' },
+                { id: 'opt3', text: '-v' },
+                { id: 'opt4', text: '-g' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "set -x enables a mode of the shell where all executed commands are printed to the terminal.",
+              explanation_ko: "set -x를 설정하면 실행되는 모든 명령어가 화면에 출력되어 디버깅에 유용합니다.",
+              mdnUrl: 'https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html'
+            },
+            {
+              id: 'q-bash-default',
+              type: 'multiple-choice',
+              question: 'Set default value if variable is unset?',
+              question_ko: '변수가 설정되지 않았을 때 기본값을 사용하려면?',
+              codeSnippet: '${var____default}',
+              options: [
+                { id: 'opt1', text: ':-' },
+                { id: 'opt2', text: ':=' },
+                { id: 'opt3', text: ':?' },
+                { id: 'opt4', text: ':+' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "${var:-default} evaluates to default if var is unset or null.",
+              explanation_ko: "${변수:-기본값}은 변수가 비어있을 때 기본값을 반환합니다.",
+              mdnUrl: 'https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html'
+            },
+            {
+              id: 'q-bash-math',
+              type: 'multiple-choice',
+              question: 'Perform arithmetic expansion?',
+              question_ko: 'Bash에서 산술 연산을 수행하는 괄호는?',
+              codeSnippet: 'echo ____1 + 1____',
+              options: [
+                { id: 'opt1', text: '$(( ... ))' },
+                { id: 'opt2', text: '${ ... }' },
+                { id: 'opt3', text: '$[ ... ]' },
+                { id: 'opt4', text: '( ... )' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "$(( expression )) is the standard syntax for arithmetic expansion.",
+              explanation_ko: "$(( 식 )) 구문을 사용하여 덧셈, 뺄셈 등 산술 연산을 할 수 있습니다.",
+              mdnUrl: 'https://www.gnu.org/software/bash/manual/html_node/Arithmetic-Expansion.html'
+            },
+            {
+              id: 'q-sed-inplace',
+              type: 'multiple-choice',
+              question: 'Edit file in-place with sed?',
+              question_ko: 'sed 명령어로 파일을 직접 수정(덮어쓰기)하려면?',
+              options: [
+                { id: 'opt1', text: '-i' },
+                { id: 'opt2', text: '-e' },
+                { id: 'opt3', text: '-f' },
+                { id: 'opt4', text: '-w' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "-i (in-place) edits the file directly.",
+              explanation_ko: "-i 옵션은 결과를 화면에 출력하는 대신 파일에 바로 저장합니다.",
+              mdnUrl: 'https://www.gnu.org/software/sed/manual/sed.html'
+            },
+            {
+              id: 'q-awk-delim',
+              type: 'multiple-choice',
+              question: 'Specify input field separator in awk?',
+              question_ko: 'awk에서 입력 필드 구분자를 지정하려면?',
+              options: [
+                { id: 'opt1', text: '-F' },
+                { id: 'opt2', text: '-d' },
+                { id: 'opt3', text: '-s' },
+                { id: 'opt4', text: '-f' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "-F sets the field separator (FS).",
+              explanation_ko: "-F 옵션으로 공백이 아닌 다른 문자(예: :)를 구분자로 지정할 수 있습니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/awk.1p.html'
+            },
+            {
+              id: 'q-xargs',
+              type: 'multiple-choice',
+              question: 'Build and execute command lines from standard input?',
+              question_ko: '표준 입력으로 받은 인자들을 사용하여 명령어를 실행해주는 도구는?',
+              options: [
+                { id: 'opt1', text: 'exec' },
+                { id: 'opt2', text: 'xargs' },
+                { id: 'opt3', text: 'run' },
+                { id: 'opt4', text: 'args' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "xargs reads items from standard input and executes a command with them.",
+              explanation_ko: "xargs는 파이프로 넘어온 결과들을 인자로 받아 다른 명령어를 실행해줍니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/xargs.1.html'
+            },
+            {
+              id: 'q-grep-context',
+              type: 'multiple-choice',
+              question: 'Show 2 lines of context around the match?',
+              question_ko: '검색된 라인의 앞뒤 2줄을 함께 보려면?',
+              codeSnippet: 'grep ____ 2 "error" log',
+              options: [
+                { id: 'opt1', text: '-C' },
+                { id: 'opt2', text: '-A' },
+                { id: 'opt3', text: '-B' },
+                { id: 'opt4', text: '-X' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "-C (Context) shows lines before and after the match.",
+              explanation_ko: "-C 2는 매칭된 라인의 위아래 2줄씩을 같이 보여줍니다.",
+              mdnUrl: 'https://en.wikipedia.org/wiki/Grep'
+            },
+            {
+              id: 'q-find-perm',
+              type: 'multiple-choice',
+              question: 'Find files with specific permissions?',
+              question_ko: '특정 권한을 가진 파일을 찾으려면?',
+              codeSnippet: 'find . -____ 777',
+              options: [
+                { id: 'opt1', text: 'perm' },
+                { id: 'opt2', text: 'mode' },
+                { id: 'opt3', text: 'access' },
+                { id: 'opt4', text: 'chmod' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "-perm searches for files with specific permission bits.",
+              explanation_ko: "-perm 옵션으로 권한 비트를 조건으로 검색할 수 있습니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/find.1.html'
+            },
+            {
+              id: 'q-tee',
+              type: 'multiple-choice',
+              question: 'Read from stdin and write to stdout AND files?',
+              question_ko: '화면 출력과 파일 저장을 동시에 하려면?',
+              codeSnippet: 'ls | ____ file.txt',
+              options: [
+                { id: 'opt1', text: 'cat' },
+                { id: 'opt2', text: 'tee' },
+                { id: 'opt3', text: 'save' },
+                { id: 'opt4', text: 'dump' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "tee reads from standard input and writes to standard output and files.",
+              explanation_ko: "tee 명령어는 T자 배관처럼 입력을 화면과 파일 두 곳으로 보냅니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/tee.1.html'
+            },
+            {
+              id: 'q-brace-exp',
+              type: 'multiple-choice',
+              question: 'Create files file1, file2, file3?',
+              question_ko: 'file1, file2, file3을 한 번에 생성하는 브레이스 확장은?',
+              codeSnippet: 'touch file{____}',
+              options: [
+                { id: 'opt1', text: '1-3' },
+                { id: 'opt2', text: '1..3' },
+                { id: 'opt3', text: '1,3' },
+                { id: 'opt4', text: '1 to 3' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "{1..3} expands to 1 2 3.",
+              explanation_ko: "{시작..끝} 문법으로 연속된 숫자를 생성할 수 있습니다.",
+              mdnUrl: 'https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html'
+            },
+            {
+              id: 'q-here-doc',
+              type: 'multiple-choice',
+              question: 'Redirect multiple lines of input to a command?',
+              question_ko: '여러 줄의 텍스트를 명령어로 리다이렉션하는(Here Document) 기호는?',
+              codeSnippet: 'cat ____ END',
+              options: [
+                { id: 'opt1', text: '<<' },
+                { id: 'opt2', text: '>>' },
+                { id: 'opt3', text: '<' },
+                { id: 'opt4', text: '<<<' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "<< allows you to pass multi-line string to a command.",
+              explanation_ko: "<< END ... END 구문으로 여러 줄의 입력을 전달할 수 있습니다.",
+              mdnUrl: 'https://www.gnu.org/software/bash/manual/bash.html#Redirections'
+            },
+            {
+              id: 'q-cut-fields',
+              type: 'multiple-choice',
+              question: 'Select the 1st and 3rd field?',
+              question_ko: '1번째와 3번째 필드만 잘라내려면?',
+              codeSnippet: 'cut -f____',
+              options: [
+                { id: 'opt1', text: '1-3' },
+                { id: 'opt2', text: '1,3' },
+                { id: 'opt3', text: '1..3' },
+                { id: 'opt4', text: '1:3' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "-f 1,3 selects fields 1 and 3.",
+              explanation_ko: "쉼표(,)로 구분하여 불연속적인 필드를 선택할 수 있습니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/cut.1.html'
+            },
+            {
+              id: 'q-tr-squeeze',
+              type: 'multiple-choice',
+              question: 'Squeeze repeating characters (e.g. spaces)?',
+              question_ko: '반복되는 문자(예: 공백)를 하나로 줄이려면?',
+              options: [
+                { id: 'opt1', text: '-s' },
+                { id: 'opt2', text: '-d' },
+                { id: 'opt3', text: '-c' },
+                { id: 'opt4', text: '-u' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "-s (squeeze-repeats) replaces each sequence of a repeated character with a single occurrence.",
+              explanation_ko: "-s 옵션은 중복된 문자를 하나로 압축합니다. 공백 정리에 유용합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/tr.1.html'
+            },
+            {
+              id: 'q-rev',
+              type: 'multiple-choice',
+              question: 'Reverse lines characterwise?',
+              question_ko: '각 줄의 문자 순서를 거꾸로(좌우 반전) 출력하려면?',
+              options: [
+                { id: 'opt1', text: 'tac' },
+                { id: 'opt2', text: 'rev' },
+                { id: 'opt3', text: 'inv' },
+                { id: 'opt4', text: 'back' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "rev reverses lines characterwise. tac reverses order of lines.",
+              explanation_ko: "rev는 문자의 좌우를 뒤집고, tac은 줄의 상하를 뒤집습니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/rev.1.html'
+            },
+            {
+              id: 'q-shuf',
+              type: 'multiple-choice',
+              question: 'Generate random permutations (shuffle)?',
+              question_ko: '입력된 줄들을 무작위로 섞으려면?',
+              options: [
+                { id: 'opt1', text: 'rand' },
+                { id: 'opt2', text: 'shuf' },
+                { id: 'opt3', text: 'mix' },
+                { id: 'opt4', text: 'sort -r' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "shuf generates random permutations.",
+              explanation_ko: "shuf 명령어는 입력을 랜덤하게 섞어서 출력합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/shuf.1.html'
+            },
+            {
+              id: 'q-seq',
+              type: 'multiple-choice',
+              question: 'Print a sequence of numbers?',
+              question_ko: '1부터 10까지 숫자를 출력하려면?',
+              codeSnippet: 'seq 1 10',
+              options: [
+                { id: 'opt1', text: 'count' },
+                { id: 'opt2', text: 'num' },
+                { id: 'opt3', text: 'seq' },
+                { id: 'opt4', text: 'list' }
+              ],
+              correctAnswerId: 'opt3',
+              explanation: "seq prints a sequence of numbers.",
+              explanation_ko: "seq 명령어는 지정된 범위의 숫자를 순서대로 출력합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/seq.1.html'
+            },
+            {
+              id: 'q-bc',
+              type: 'multiple-choice',
+              question: 'Command line calculator?',
+              question_ko: '터미널에서 사용할 수 있는 임의 정밀도 계산기 언어는?',
+              options: [
+                { id: 'opt1', text: 'calc' },
+                { id: 'opt2', text: 'bc' },
+                { id: 'opt3', text: 'math' },
+                { id: 'opt4', text: 'expr' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "bc is an arbitrary precision calculator language.",
+              explanation_ko: "bc (basic calculator)는 정밀한 수학 계산을 수행할 수 있는 도구입니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/bc.1p.html'
+            }
+          ]
+        },
+        {
+          id: 'linux-adv-net',
+          title: 'Advanced Networking',
+          title_ko: '고급 네트워크',
+          description: 'Tunneling, Firewall, DNS.',
+          description_ko: '터널링, 방화벽, DNS 심화.',
+          questions: [
+            {
+              id: 'q-ssh-L',
+              type: 'multiple-choice',
+              question: 'Local port forwarding with SSH?',
+              question_ko: 'SSH 로컬 포트 포워딩(터널링) 옵션은?',
+              codeSnippet: 'ssh -____ 8080:localhost:80 user@host',
+              options: [
+                { id: 'opt1', text: 'L' },
+                { id: 'opt2', text: 'R' },
+                { id: 'opt3', text: 'D' },
+                { id: 'opt4', text: 'f' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "-L (Local) forwards a local port to a remote address.",
+              explanation_ko: "-L 옵션은 로컬 포트를 원격지 서버를 통해 특정 주소로 연결해줍니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/ssh.1.html'
+            },
+            {
+              id: 'q-ssh-keygen',
+              type: 'multiple-choice',
+              question: 'Generate SSH public/private key pair?',
+              question_ko: 'SSH 공개키/비공개키 쌍을 생성하는 명령어는?',
+              options: [
+                { id: 'opt1', text: 'ssh-add' },
+                { id: 'opt2', text: 'ssh-keygen' },
+                { id: 'opt3', text: 'ssh-copy-id' },
+                { id: 'opt4', text: 'ssh-init' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "ssh-keygen generates, manages and converts authentication keys for ssh.",
+              explanation_ko: "ssh-keygen 명령어로 접속 인증에 사용할 키 파일을 생성합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/ssh-keygen.1.html'
+            },
+            {
+              id: 'q-ssh-copy-id',
+              type: 'multiple-choice',
+              question: 'Install your public key on a remote server?',
+              question_ko: '내 공개키를 원격 서버에 간편하게 등록해주는 명령어는?',
+              options: [
+                { id: 'opt1', text: 'ssh-install' },
+                { id: 'opt2', text: 'ssh-copy-id' },
+                { id: 'opt3', text: 'ssh-push' },
+                { id: 'opt4', text: 'scp' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "ssh-copy-id uses ssh to log into a remote machine and append the indicated identity file to that machine's authorized_keys file.",
+              explanation_ko: "ssh-copy-id는 authorized_keys 파일에 자동으로 키를 추가해줍니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/ssh-copy-id.1.html'
+            },
+            {
+              id: 'q-rsync-avz',
+              type: 'multiple-choice',
+              question: 'Common flags for archive, verbose, compressed rsync?',
+              question_ko: 'rsync 사용 시 아카이브(속성유지), 상세출력, 압축전송을 위한 국민 옵션은?',
+              codeSnippet: 'rsync -____ src dest',
+              options: [
+                { id: 'opt1', text: 'avz' },
+                { id: 'opt2', text: 'rwx' },
+                { id: 'opt3', text: 'abc' },
+                { id: 'opt4', text: 'all' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "-a (archive), -v (verbose), -z (compress).",
+              explanation_ko: "-avz 옵션은 가장 많이 사용되는 rsync 옵션 조합입니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/rsync.1.html'
+            },
+            {
+              id: 'q-iptables-list',
+              type: 'multiple-choice',
+              question: 'List current firewall rules?',
+              question_ko: '현재 iptables 방화벽 규칙 목록을 보려면?',
+              codeSnippet: 'iptables -____',
+              options: [
+                { id: 'opt1', text: 'L' },
+                { id: 'opt2', text: 'S' },
+                { id: 'opt3', text: 'l' },
+                { id: 'opt4', text: 'show' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "-L lists all rules in the selected chain.",
+              explanation_ko: "-L (대문자) 옵션은 현재 설정된 규칙들을 보여줍니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/iptables.8.html'
+            },
+            {
+              id: 'q-ufw-enable',
+              type: 'multiple-choice',
+              question: 'Enable UFW (Uncomplicated Firewall)?',
+              question_ko: 'UFW 방화벽을 활성화하려면?',
+              codeSnippet: 'ufw ____',
+              options: [
+                { id: 'opt1', text: 'start' },
+                { id: 'opt2', text: 'on' },
+                { id: 'opt3', text: 'enable' },
+                { id: 'opt4', text: 'up' }
+              ],
+              correctAnswerId: 'opt3',
+              explanation: "ufw enable activates the firewall.",
+              explanation_ko: "ufw enable 명령어로 방화벽을 켭니다.",
+              mdnUrl: 'https://manpages.ubuntu.com/manpages/xenial/man8/ufw.8.html'
+            },
+            {
+              id: 'q-nc-portscan',
+              type: 'multiple-choice',
+              question: 'Scan open ports with netcat?',
+              question_ko: 'Netcat으로 특정 범위의 포트가 열려있는지 스캔하려면?',
+              codeSnippet: 'nc -z -v host 20-80',
+              options: [
+                { id: 'opt1', text: '-s' },
+                { id: 'opt2', text: '-z' },
+                { id: 'opt3', text: '-p' },
+                { id: 'opt4', text: '-S' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "-z specifies to scan for listening daemons, without sending any data.",
+              explanation_ko: "-z (Zero-I/O mode) 옵션은 데이터를 보내지 않고 연결 가능 여부만 확인합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/nc.1.html'
+            },
+            {
+              id: 'q-ethtool',
+              type: 'multiple-choice',
+              question: 'Display or change ethernet card settings?',
+              question_ko: '이더넷 카드의 속도, 듀플렉스 모드 등을 확인하거나 변경하는 도구는?',
+              options: [
+                { id: 'opt1', text: 'ifconfig' },
+                { id: 'opt2', text: 'ethtool' },
+                { id: 'opt3', text: 'ip link' },
+                { id: 'opt4', text: 'nettool' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "ethtool queries and controls network driver and hardware settings.",
+              explanation_ko: "ethtool은 네트워크 인터페이스의 물리적 설정을 제어합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/ethtool.8.html'
+            },
+            {
+              id: 'q-resolvectl',
+              type: 'multiple-choice',
+              question: 'Check DNS settings on systemd systems?',
+              question_ko: 'systemd 기반 시스템에서 DNS 리졸버 설정을 확인하는 최신 명령어는?',
+              options: [
+                { id: 'opt1', text: 'dnsctl' },
+                { id: 'opt2', text: 'resolvectl' },
+                { id: 'opt3', text: 'systemd-dns' },
+                { id: 'opt4', text: 'named' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "resolvectl queries or controls the systemd-resolved service.",
+              explanation_ko: "resolvectl status로 현재 DNS 서버 설정 등을 확인할 수 있습니다.",
+              mdnUrl: 'https://www.freedesktop.org/software/systemd/man/resolvectl.html'
+            },
+            {
+              id: 'q-hostnamectl',
+              type: 'multiple-choice',
+              question: 'Change the system hostname?',
+              question_ko: '시스템의 호스트 이름을 영구적으로 변경하는 systemd 명령어는?',
+              codeSnippet: '____ set-hostname new-name',
+              options: [
+                { id: 'opt1', text: 'hostname' },
+                { id: 'opt2', text: 'hostnamectl' },
+                { id: 'opt3', text: 'sysctl' },
+                { id: 'opt4', text: 'namectl' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "hostnamectl may be used to query and change the system hostname.",
+              explanation_ko: "hostnamectl set-hostname 명령으로 호스트명을 변경하면 설정 파일에도 반영됩니다.",
+              mdnUrl: 'https://www.freedesktop.org/software/systemd/man/hostnamectl.html'
+            },
+            {
+              id: 'q-arp-a',
+              type: 'multiple-choice',
+              question: 'Display ARP table?',
+              question_ko: 'ARP(주소 결정 프로토콜) 테이블(IP-MAC 매핑)을 확인하려면?',
+              options: [
+                { id: 'opt1', text: 'arp -a' },
+                { id: 'opt2', text: 'mac -a' },
+                { id: 'opt3', text: 'ip mac' },
+                { id: 'opt4', text: 'showarp' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "arp -a displays the current ARP cache.",
+              explanation_ko: "arp -a 또는 ip neigh 명령어로 ARP 캐시 테이블을 확인합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/arp.8.html'
+            },
+            {
+              id: 'q-tcpdump-file',
+              type: 'multiple-choice',
+              question: 'Save captured packets to a pcap file?',
+              question_ko: 'tcpdump로 캡처한 내용을 나중에 분석할 수 있게 파일로 저장하려면?',
+              codeSnippet: 'tcpdump -____ capture.pcap',
+              options: [
+                { id: 'opt1', text: 's' },
+                { id: 'opt2', text: 'w' },
+                { id: 'opt3', text: 'f' },
+                { id: 'opt4', text: 'o' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "-w (write) writes the raw packets to a file.",
+              explanation_ko: "-w 옵션을 사용하여 바이너리(pcap) 포맷으로 저장해야 Wireshark 등에서 열 수 있습니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/tcpdump.1.html'
+            },
+            {
+              id: 'q-nmap',
+              type: 'multiple-choice',
+              question: 'Network exploration and security auditing tool?',
+              question_ko: '네트워크 스캔 및 보안 취약점 점검을 위한 강력한 도구는?',
+              options: [
+                { id: 'opt1', text: 'scan' },
+                { id: 'opt2', text: 'nmap' },
+                { id: 'opt3', text: 'netscan' },
+                { id: 'opt4', text: 'audit' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "nmap is a utility for network exploration or security auditing.",
+              explanation_ko: "nmap은 포트 스캔, OS 탐지 등 네트워크 분석의 표준 도구입니다.",
+              mdnUrl: 'https://nmap.org/book/man.html'
+            },
+            {
+              id: 'q-ip-link-up',
+              type: 'multiple-choice',
+              question: 'Bring a network interface up?',
+              question_ko: '네트워크 인터페이스(예: eth0)를 활성화하려면?',
+              codeSnippet: 'ip link set eth0 ____',
+              options: [
+                { id: 'opt1', text: 'on' },
+                { id: 'opt2', text: 'enable' },
+                { id: 'opt3', text: 'up' },
+                { id: 'opt4', text: 'start' }
+              ],
+              correctAnswerId: 'opt3',
+              explanation: "ip link set device up enables the interface.",
+              explanation_ko: "up 키워드로 인터페이스를 활성화합니다. (반대는 down)",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/ip-link.8.html'
+            },
+            {
+              id: 'q-route-del',
+              type: 'multiple-choice',
+              question: 'Delete a routing entry?',
+              question_ko: '라우팅 테이블에서 특정 경로를 삭제하려면?',
+              codeSnippet: 'ip route ____ default',
+              options: [
+                { id: 'opt1', text: 'rm' },
+                { id: 'opt2', text: 'del' },
+                { id: 'opt3', text: 'remove' },
+                { id: 'opt4', text: 'drop' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "ip route del deletes a route.",
+              explanation_ko: "ip route del 명령으로 경로를 삭제합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/ip-route.8.html'
+            },
+            {
+              id: 'q-mtr',
+              type: 'multiple-choice',
+              question: 'Combine ping and traceroute?',
+              question_ko: 'ping과 traceroute 기능을 합쳐서 실시간으로 경로 품질을 보여주는 도구는?',
+              options: [
+                { id: 'opt1', text: 'ptrace' },
+                { id: 'opt2', text: 'mtr' },
+                { id: 'opt3', text: 'pathping' },
+                { id: 'opt4', text: 'tracert' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "mtr combines the functionality of the traceroute and ping programs.",
+              explanation_ko: "mtr(My Traceroute)은 경로상의 패킷 손실률과 대기 시간을 실시간으로 갱신해줍니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/mtr.8.html'
+            },
+            {
+              id: 'q-whois',
+              type: 'multiple-choice',
+              question: 'Query domain registration info?',
+              question_ko: '도메인 소유자, 등록일, 만료일 정보를 조회하려면?',
+              options: [
+                { id: 'opt1', text: 'domain' },
+                { id: 'opt2', text: 'whois' },
+                { id: 'opt3', text: 'reg' },
+                { id: 'opt4', text: 'info' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "whois searches for an object in a RFC 3912 database.",
+              explanation_ko: "whois 데이터베이스에서 도메인 등록 정보를 조회합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/whois.1.html'
+            },
+            {
+              id: 'q-iptables-flush',
+              type: 'multiple-choice',
+              question: 'Delete all firewall rules?',
+              question_ko: '모든 iptables 규칙을 삭제(초기화)하려면?',
+              codeSnippet: 'iptables -____',
+              options: [
+                { id: 'opt1', text: 'D' },
+                { id: 'opt2', text: 'F' },
+                { id: 'opt3', text: 'C' },
+                { id: 'opt4', text: 'R' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "-F (flush) deletes all rules.",
+              explanation_ko: "-F (Flush) 옵션은 체인의 모든 규칙을 삭제합니다. 주의해서 사용해야 합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/iptables.8.html'
+            },
+            {
+              id: 'q-curl-post',
+              type: 'multiple-choice',
+              question: 'Send a POST request with data?',
+              question_ko: 'curl로 POST 요청을 보내면서 데이터를 전송하려면?',
+              codeSnippet: 'curl -X POST -____ "data" url',
+              options: [
+                { id: 'opt1', text: 'p' },
+                { id: 'opt2', text: 'd' },
+                { id: 'opt3', text: 's' },
+                { id: 'opt4', text: 'b' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "-d (data) sends data in a POST request.",
+              explanation_ko: "-d 옵션으로 HTTP POST 바디 데이터를 전송합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/curl.1.html'
+            },
+            {
+              id: 'q-ss-process',
+              type: 'multiple-choice',
+              question: 'Show process using the socket in ss?',
+              question_ko: 'ss 명령어에서 소켓을 사용하는 프로세스 정보를 함께 보려면?',
+              options: [
+                { id: 'opt1', text: '-p' },
+                { id: 'opt2', text: '-u' },
+                { id: 'opt3', text: '-proc' },
+                { id: 'opt4', text: '-pid' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "-p shows process using socket.",
+              explanation_ko: "-p 옵션을 사용하면 PID와 프로세스 이름을 보여줍니다 (sudo 필요).",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/ss.8.html'
+            }
+          ]
+        },
+        {
+          id: 'linux-sys-admin',
+          title: 'System Admin',
+          title_ko: '시스템 관리',
+          description: 'Systemd, Logs, Users.',
+          description_ko: 'Systemd, 로그, 사용자 관리 심화.',
+          questions: [
+            {
+              id: 'q-systemctl-start',
+              type: 'multiple-choice',
+              question: 'Start a service immediately?',
+              question_ko: '서비스를 즉시 시작하려면?',
+              codeSnippet: 'systemctl ____ nginx',
+              options: [
+                { id: 'opt1', text: 'enable' },
+                { id: 'opt2', text: 'start' },
+                { id: 'opt3', text: 'run' },
+                { id: 'opt4', text: 'up' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "start activates the service immediately.",
+              explanation_ko: "start는 서비스를 지금 바로 실행합니다. 부팅 시 실행은 enable입니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/systemctl.1.html'
+            },
+            {
+              id: 'q-systemctl-enable',
+              type: 'multiple-choice',
+              question: 'Start service on boot?',
+              question_ko: '부팅 시 서비스가 자동으로 시작되게 하려면?',
+              codeSnippet: 'systemctl ____ nginx',
+              options: [
+                { id: 'opt1', text: 'start' },
+                { id: 'opt2', text: 'enable' },
+                { id: 'opt3', text: 'boot' },
+                { id: 'opt4', text: 'auto' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "enable creates symlinks to start the service on boot.",
+              explanation_ko: "enable은 재부팅 후에도 서비스가 실행되도록 설정합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/systemctl.1.html'
+            },
+            {
+              id: 'q-journalctl',
+              type: 'multiple-choice',
+              question: 'View systemd logs?',
+              question_ko: 'Systemd 서비스들의 로그를 확인하는 명령어는?',
+              options: [
+                { id: 'opt1', text: 'syslog' },
+                { id: 'opt2', text: 'journalctl' },
+                { id: 'opt3', text: 'logview' },
+                { id: 'opt4', text: 'showlog' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "journalctl query the systemd journal.",
+              explanation_ko: "journalctl은 systemd-journald가 수집한 로그를 보여줍니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/journalctl.1.html'
+            },
+            {
+              id: 'q-journalctl-follow',
+              type: 'multiple-choice',
+              question: 'Follow log output in real-time?',
+              question_ko: '로그가 쌓이는 것을 실시간으로 보려면 (tail -f 처럼)?',
+              codeSnippet: 'journalctl -____',
+              options: [
+                { id: 'opt1', text: 'f' },
+                { id: 'opt2', text: 'r' },
+                { id: 'opt3', text: 'live' },
+                { id: 'opt4', text: 'n' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "-f (follow) follows the journal.",
+              explanation_ko: "-f 옵션은 실시간으로 추가되는 로그를 보여줍니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/journalctl.1.html'
+            },
+            {
+              id: 'q-visudo',
+              type: 'multiple-choice',
+              question: 'Safely edit the sudoers file?',
+              question_ko: '/etc/sudoers 파일을 안전하게(문법체크 포함) 수정하려면?',
+              options: [
+                { id: 'opt1', text: 'vi /etc/sudoers' },
+                { id: 'opt2', text: 'visudo' },
+                { id: 'opt3', text: 'editsudo' },
+                { id: 'opt4', text: 'sudoedit' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "visudo edits the sudoers file in a safe fashion.",
+              explanation_ko: "visudo는 저장 시 문법 오류를 검사하여 설정 실수로 인한 sudo 불능 사태를 막아줍니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/visudo.8.html'
+            },
+            {
+              id: 'q-last',
+              type: 'multiple-choice',
+              question: 'Show listing of last logged in users?',
+              question_ko: '최근에 로그인한 사용자 기록을 확인하려면?',
+              options: [
+                { id: 'opt1', text: 'who' },
+                { id: 'opt2', text: 'last' },
+                { id: 'opt3', text: 'history' },
+                { id: 'opt4', text: 'logins' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "last shows a listing of last logged in users.",
+              explanation_ko: "last 명령어는 /var/log/wtmp 파일을 읽어 로그인 기록을 보여줍니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/last.1.html'
+            },
+            {
+              id: 'q-w',
+              type: 'multiple-choice',
+              question: 'Show who is logged in and what they are doing?',
+              question_ko: '현재 로그인한 사용자와 그들이 실행 중인 작업을 보려면?',
+              options: [
+                { id: 'opt1', text: 'who' },
+                { id: 'opt2', text: 'w' },
+                { id: 'opt3', text: 'users' },
+                { id: 'opt4', text: 'where' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "w shows who is logged in and what they are doing.",
+              explanation_ko: "w 명령어는 who보다 더 상세한 정보(현재 실행 중인 명령어 등)를 보여줍니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/w.1.html'
+            },
+            {
+              id: 'q-shutdown',
+              type: 'multiple-choice',
+              question: 'Shutdown the system immediately?',
+              question_ko: '시스템을 즉시 종료하려면?',
+              codeSnippet: 'shutdown -h ____',
+              options: [
+                { id: 'opt1', text: '0' },
+                { id: 'opt2', text: 'now' },
+                { id: 'opt3', text: 'force' },
+                { id: 'opt4', text: 'yes' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "shutdown -h now halts the system immediately.",
+              explanation_ko: "now는 즉시를 의미합니다. 시간(분)을 지정할 수도 있습니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/shutdown.8.html'
+            },
+            {
+              id: 'q-groupadd',
+              type: 'multiple-choice',
+              question: 'Create a new user group?',
+              question_ko: '새로운 그룹을 생성하는 명령어는?',
+              options: [
+                { id: 'opt1', text: 'newgroup' },
+                { id: 'opt2', text: 'groupadd' },
+                { id: 'opt3', text: 'mkgroup' },
+                { id: 'opt4', text: 'addgroup' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "groupadd creates a new group definition on the system.",
+              explanation_ko: "groupadd 명령어로 /etc/group 파일에 새 그룹을 추가합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/groupadd.8.html'
+            },
+            {
+              id: 'q-crontab-e',
+              type: 'multiple-choice',
+              question: 'Edit the current user\'s cron jobs?',
+              question_ko: '사용자의 크론(예약 작업) 테이블을 수정하려면?',
+              codeSnippet: 'crontab -____',
+              options: [
+                { id: 'opt1', text: 'e' },
+                { id: 'opt2', text: 'l' },
+                { id: 'opt3', text: 'r' },
+                { id: 'opt4', text: 'w' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "-e (edit) allows editing the crontab file.",
+              explanation_ko: "-e 옵션은 기본 에디터를 열어 크론 작업을 수정하게 해줍니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/crontab.1.html'
+            },
+            {
+              id: 'q-at',
+              type: 'multiple-choice',
+              question: 'Schedule a command to run once in the future?',
+              question_ko: '특정 시간에 명령어가 한 번만 실행되도록 예약하려면?',
+              options: [
+                { id: 'opt1', text: 'cron' },
+                { id: 'opt2', text: 'at' },
+                { id: 'opt3', text: 'schedule' },
+                { id: 'opt4', text: 'plan' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "at executes commands at a specified time.",
+              explanation_ko: "cron은 주기적 실행이고, at은 일회성 예약 실행입니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/at.1.html'
+            },
+            {
+              id: 'q-wall',
+              type: 'multiple-choice',
+              question: 'Send a message to everyone logged in?',
+              question_ko: '로그인한 모든 사용자에게 메시지를 띄우려면?',
+              options: [
+                { id: 'opt1', text: 'talk' },
+                { id: 'opt2', text: 'wall' },
+                { id: 'opt3', text: 'broadcast' },
+                { id: 'opt4', text: 'say' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "wall (write all) sends a message to everybody logged in.",
+              explanation_ko: "wall 명령어로 긴급 공지 등을 모든 터미널에 보낼 수 있습니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/wall.1.html'
+            },
+            {
+              id: 'q-logrotate',
+              type: 'multiple-choice',
+              question: 'Tool to manage log file rotation/compression?',
+              question_ko: '로그 파일이 너무 커지지 않게 주기적으로 교체/압축하는 도구는?',
+              options: [
+                { id: 'opt1', text: 'logrotate' },
+                { id: 'opt2', text: 'logman' },
+                { id: 'opt3', text: 'rotatelog' },
+                { id: 'opt4', text: 'logcycle' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "logrotate is designed to ease administration of systems that generate large numbers of log files.",
+              explanation_ko: "logrotate는 설정에 따라 오래된 로그를 압축하거나 삭제하여 디스크 공간을 관리합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/logrotate.8.html'
+            },
+            {
+              id: 'q-sysctl',
+              type: 'multiple-choice',
+              question: 'Modify kernel parameters at runtime?',
+              question_ko: '런타임에 커널 파라미터 값을 확인하거나 변경하려면?',
+              options: [
+                { id: 'opt1', text: 'kernelctl' },
+                { id: 'opt2', text: 'sysctl' },
+                { id: 'opt3', text: 'modprobe' },
+                { id: 'opt4', text: 'kparam' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "sysctl is used to modify kernel parameters at runtime.",
+              explanation_ko: "sysctl -w net.ipv4.ip_forward=1 처럼 커널 설정을 즉시 변경할 수 있습니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/sysctl.8.html'
+            },
+            {
+              id: 'q-ulimit',
+              type: 'multiple-choice',
+              question: 'Set user resource limits?',
+              question_ko: '사용자 프로세스의 자원(파일 크기, 프로세스 수 등) 제한을 설정하려면?',
+              options: [
+                { id: 'opt1', text: 'quota' },
+                { id: 'opt2', text: 'ulimit' },
+                { id: 'opt3', text: 'limit' },
+                { id: 'opt4', text: 'resctl' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "ulimit gets and sets user resource limits.",
+              explanation_ko: "ulimit -a로 현재 제한을 확인하고 설정할 수 있습니다.",
+              mdnUrl: 'https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html'
+            },
+            {
+              id: 'q-modprobe',
+              type: 'multiple-choice',
+              question: 'Add/remove modules from the Linux kernel?',
+              question_ko: '리눅스 커널 모듈을 추가하거나 제거할 때 사용하는 명령어는?',
+              options: [
+                { id: 'opt1', text: 'insmod' },
+                { id: 'opt2', text: 'modprobe' },
+                { id: 'opt3', text: 'lsmod' },
+                { id: 'opt4', text: 'rmmod' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "modprobe intelligently adds or removes a module from the Linux kernel (handling dependencies).",
+              explanation_ko: "modprobe는 의존성을 고려하여 모듈을 로드하므로 insmod보다 권장됩니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/modprobe.8.html'
+            },
+            {
+              id: 'q-runlevel',
+              type: 'multiple-choice',
+              question: 'Check current runlevel?',
+              question_ko: '현재 시스템의 런레벨(실행 모드)을 확인하려면?',
+              options: [
+                { id: 'opt1', text: 'rl' },
+                { id: 'opt2', text: 'runlevel' },
+                { id: 'opt3', text: 'mode' },
+                { id: 'opt4', text: 'level' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "runlevel prints the previous and current SysV runlevel.",
+              explanation_ko: "runlevel 또는 who -r 명령어로 확인합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/runlevel.8.html'
+            },
+            {
+              id: 'q-init',
+              type: 'multiple-choice',
+              question: 'Change system runlevel (e.g. reboot)?',
+              question_ko: '시스템 런레벨을 변경(예: 6으로 재부팅)하는 명령어는?',
+              codeSnippet: 'init ____',
+              options: [
+                { id: 'opt1', text: '6' },
+                { id: 'opt2', text: '0' },
+                { id: 'opt3', text: '1' },
+                { id: 'opt4', text: '3' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "init 6 reboots the system.",
+              explanation_ko: "init 0은 종료, init 6은 재부팅을 의미합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/init.8.html'
+            },
+            {
+              id: 'q-uptime-load',
+              type: 'multiple-choice',
+              question: 'What do the 3 numbers at the end of `uptime` represent?',
+              question_ko: '`uptime` 결과 끝에 나오는 3개의 숫자는 무엇을 의미하나요?',
+              options: [
+                { id: 'opt1', text: 'Memory usage' },
+                { id: 'opt2', text: 'Load average (1, 5, 15 min)' },
+                { id: 'opt3', text: 'Process count' },
+                { id: 'opt4', text: 'Disk IO' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "Load average for the past 1, 5, and 15 minutes.",
+              explanation_ko: "최근 1분, 5분, 15분 간의 평균 시스템 부하(Load Average)를 나타냅니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/uptime.1.html'
+            },
+            {
+              id: 'q-chage',
+              type: 'multiple-choice',
+              question: 'Change user password expiry info?',
+              question_ko: '사용자 패스워드 만료일 등을 설정하는 명령어는?',
+              options: [
+                { id: 'opt1', text: 'usermod' },
+                { id: 'opt2', text: 'chage' },
+                { id: 'opt3', text: 'passwd' },
+                { id: 'opt4', text: 'expiry' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "chage changes the number of days between password changes and last password change date.",
+              explanation_ko: "chage 명령어로 패스워드 만료일, 경고일 등을 상세히 설정할 수 있습니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/chage.1.html'
+            }
+          ]
+        },
+        {
+          id: 'linux-adv-sec',
+          title: 'Security Hardening',
+          title_ko: '보안 강화',
+          description: 'SELinux, Permissions, ACL.',
+          description_ko: 'SELinux, 특수권한, ACL.',
+          questions: [
+            {
+              id: 'q-sestatus',
+              type: 'multiple-choice',
+              question: 'Check SELinux status?',
+              question_ko: 'SELinux의 현재 상태를 확인하는 명령어는?',
+              options: [
+                { id: 'opt1', text: 'selinux' },
+                { id: 'opt2', text: 'sestatus' },
+                { id: 'opt3', text: 'check-se' },
+                { id: 'opt4', text: 'seinfo' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "sestatus displays the status of SELinux.",
+              explanation_ko: "sestatus는 SELinux가 Enforcing 모드인지 등을 보여줍니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/sestatus.8.html'
+            },
+            {
+              id: 'q-chcon',
+              type: 'multiple-choice',
+              question: 'Change SELinux context of a file?',
+              question_ko: '파일의 SELinux 보안 컨텍스트를 변경하려면?',
+              options: [
+                { id: 'opt1', text: 'chmod' },
+                { id: 'opt2', text: 'chcon' },
+                { id: 'opt3', text: 'setse' },
+                { id: 'opt4', text: 'semanage' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "chcon changes the SELinux security context of a file.",
+              explanation_ko: "chcon 명령어로 파일의 타입 등 컨텍스트를 수정할 수 있습니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/chcon.1.html'
+            },
+            {
+              id: 'q-getfacl',
+              type: 'multiple-choice',
+              question: 'View file Access Control Lists (ACL)?',
+              question_ko: '파일에 설정된 ACL(접근 제어 목록)을 확인하려면?',
+              options: [
+                { id: 'opt1', text: 'ls -acl' },
+                { id: 'opt2', text: 'getfacl' },
+                { id: 'opt3', text: 'showacl' },
+                { id: 'opt4', text: 'aclview' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "getfacl gets file access control lists.",
+              explanation_ko: "getfacl은 기본 권한(rwx) 외에 추가된 사용자별 권한을 보여줍니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/getfacl.1.html'
+            },
+            {
+              id: 'q-setfacl',
+              type: 'multiple-choice',
+              question: 'Modify file ACL?',
+              question_ko: '특정 사용자에게만 파일 권한을 추가(ACL 설정)하려면?',
+              codeSnippet: '____ -m u:user:rwx file',
+              options: [
+                { id: 'opt1', text: 'chmod' },
+                { id: 'opt2', text: 'setfacl' },
+                { id: 'opt3', text: 'addacl' },
+                { id: 'opt4', text: 'modacl' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "setfacl sets file access control lists.",
+              explanation_ko: "setfacl -m u:사용자:권한 형식으로 상세 권한을 제어합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/setfacl.1.html'
+            },
+            {
+              id: 'q-chattr-i',
+              type: 'multiple-choice',
+              question: 'Make a file immutable (cannot be changed/deleted)?',
+              question_ko: '파일을 수정하거나 삭제할 수 없게(불변) 설정하려면?',
+              codeSnippet: 'chattr ____ file',
+              options: [
+                { id: 'opt1', text: '+i' },
+                { id: 'opt2', text: '+a' },
+                { id: 'opt3', text: '+r' },
+                { id: 'opt4', text: '+l' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "+i (immutable) prevents changes to the file (even by root).",
+              explanation_ko: "+i 속성이 설정되면 root도 파일을 삭제하거나 수정할 수 없습니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/chattr.1.html'
+            },
+            {
+              id: 'q-lsattr',
+              type: 'multiple-choice',
+              question: 'List file attributes (like immutable)?',
+              question_ko: '파일에 설정된 chattr 속성들을 확인하려면?',
+              options: [
+                { id: 'opt1', text: 'ls -attr' },
+                { id: 'opt2', text: 'lsattr' },
+                { id: 'opt3', text: 'showattr' },
+                { id: 'opt4', text: 'attrlist' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "lsattr lists file attributes on a Linux second extended file system.",
+              explanation_ko: "lsattr 명령어로 i(불변), a(추가만 가능) 등의 속성을 확인합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/lsattr.1.html'
+            },
+            {
+              id: 'q-umask-secure',
+              type: 'multiple-choice',
+              question: 'Most secure umask for private files?',
+              question_ko: '나만 읽고 쓸 수 있는 파일이 생성되도록 하는 umask 값은?',
+              options: [
+                { id: 'opt1', text: '022' },
+                { id: 'opt2', text: '077' },
+                { id: 'opt3', text: '002' },
+                { id: 'opt4', text: '000' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "077 results in 600 (rw-------) permissions for files.",
+              explanation_ko: "077은 그룹과 기타 사용자의 모든 권한을 제거하여 소유자만 접근하게 합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/umask.1p.html'
+            },
+            {
+              id: 'q-fail2ban',
+              type: 'multiple-choice',
+              question: 'Tool to ban IPs that show malicious signs?',
+              question_ko: '반복적인 로그인 실패 등 악의적 징후를 보인 IP를 자동 차단하는 도구는?',
+              options: [
+                { id: 'opt1', text: 'iptables' },
+                { id: 'opt2', text: 'fail2ban' },
+                { id: 'opt3', text: 'denyhosts' },
+                { id: 'opt4', text: 'blockip' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "fail2ban scans log files and bans IPs that show the malicious signs.",
+              explanation_ko: "fail2ban은 로그를 분석하여 공격자를 방화벽으로 차단합니다.",
+              mdnUrl: 'https://www.fail2ban.org/'
+            },
+            {
+              id: 'q-ssh-config',
+              type: 'multiple-choice',
+              question: 'Main configuration file for SSH server?',
+              question_ko: 'SSH 서버의 설정(포트, 루트 로그인 허용 여부 등)을 담은 파일은?',
+              options: [
+                { id: 'opt1', text: '/etc/ssh/ssh_config' },
+                { id: 'opt2', text: '/etc/ssh/sshd_config' },
+                { id: 'opt3', text: '/etc/sshd_config' },
+                { id: 'opt4', text: '/etc/ssh_server' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "sshd_config is the configuration file for the SSH daemon (server). ssh_config is for client.",
+              explanation_ko: "d가 붙은 sshd_config가 서버 데몬 설정 파일입니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man5/sshd_config.5.html'
+            },
+            {
+              id: 'q-ssh-root',
+              type: 'multiple-choice',
+              question: 'Directive to disable root login in sshd_config?',
+              question_ko: 'SSH 루트 로그인을 막기 위한 설정 항목은?',
+              codeSnippet: '____ no',
+              options: [
+                { id: 'opt1', text: 'AllowRoot' },
+                { id: 'opt2', text: 'PermitRootLogin' },
+                { id: 'opt3', text: 'RootLogin' },
+                { id: 'opt4', text: 'BlockRoot' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "PermitRootLogin no disables root login via SSH.",
+              explanation_ko: "PermitRootLogin no로 설정하면 보안상 안전합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man5/sshd_config.5.html'
+            },
+            {
+              id: 'q-suid-find',
+              type: 'multiple-choice',
+              question: 'Find all SetUID files (security check)?',
+              question_ko: '시스템 내의 모든 SetUID 파일(잠재적 위험)을 찾으려면?',
+              codeSnippet: 'find / -perm ____ -type f',
+              options: [
+                { id: 'opt1', text: '4000' },
+                { id: 'opt2', text: '2000' },
+                { id: 'opt3', text: '1000' },
+                { id: 'opt4', text: '6000' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "-perm 4000 searches for SUID bit.",
+              explanation_ko: "4000은 SetUID 비트를 의미합니다. (SetGID는 2000)",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/find.1.html'
+            },
+            {
+              id: 'q-sha256sum',
+              type: 'multiple-choice',
+              question: 'Calculate SHA-256 hash of a file?',
+              question_ko: '파일의 무결성을 확인하기 위해 SHA-256 해시를 계산하려면?',
+              options: [
+                { id: 'opt1', text: 'hash' },
+                { id: 'opt2', text: 'sha256sum' },
+                { id: 'opt3', text: 'md5sum' },
+                { id: 'opt4', text: 'cksum' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "sha256sum computes and checks SHA256 message digest.",
+              explanation_ko: "sha256sum으로 파일의 고유 해시값을 구할 수 있습니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/sha256sum.1.html'
+            },
+            {
+              id: 'q-gpg',
+              type: 'multiple-choice',
+              question: 'Encrypt a file using GPG?',
+              question_ko: 'GPG를 사용하여 파일을 암호화하려면?',
+              codeSnippet: 'gpg -____ file',
+              options: [
+                { id: 'opt1', text: 'c' },
+                { id: 'opt2', text: 'e' },
+                { id: 'opt3', text: 'x' },
+                { id: 'opt4', text: 'h' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "-c (symmetric) encrypts with a passphrase.",
+              explanation_ko: "-c 옵션은 대칭키(비밀번호) 방식으로 파일을 암호화합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/gpg.1.html'
+            },
+            {
+              id: 'q-auditd',
+              type: 'multiple-choice',
+              question: 'Daemon for writing audit records to disk?',
+              question_ko: '시스템의 보안 감사를 위해 이벤트를 기록하는 데몬은?',
+              options: [
+                { id: 'opt1', text: 'syslogd' },
+                { id: 'opt2', text: 'auditd' },
+                { id: 'opt3', text: 'secd' },
+                { id: 'opt4', text: 'logd' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "auditd is the userspace component to the Linux Auditing System.",
+              explanation_ko: "auditd는 파일 접근, 시스템 콜 등 보안 관련 이벤트를 상세히 기록합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/auditd.8.html'
+            },
+            {
+              id: 'q-ausearch',
+              type: 'multiple-choice',
+              question: 'Query audit daemon logs?',
+              question_ko: 'auditd가 기록한 감사 로그를 검색하는 명령어는?',
+              options: [
+                { id: 'opt1', text: 'auditgrep' },
+                { id: 'opt2', text: 'ausearch' },
+                { id: 'opt3', text: 'logquery' },
+                { id: 'opt4', text: 'findaudit' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "ausearch queries the audit daemon logs.",
+              explanation_ko: "ausearch 명령어로 특정 파일 접근 기록 등을 찾을 수 있습니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/ausearch.8.html'
+            },
+            {
+              id: 'q-apparmor',
+              type: 'multiple-choice',
+              question: 'Debian/Ubuntu alternative to SELinux?',
+              question_ko: 'Debian/Ubuntu 계열에서 주로 사용하는 SELinux의 대안 보안 모듈은?',
+              options: [
+                { id: 'opt1', text: 'Defender' },
+                { id: 'opt2', text: 'AppArmor' },
+                { id: 'opt3', text: 'NetArmor' },
+                { id: 'opt4', text: 'SecMod' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "AppArmor proactively protects the operating system and applications from external or internal threats.",
+              explanation_ko: "AppArmor는 프로필 기반으로 프로그램의 권한을 제한합니다.",
+              mdnUrl: 'https://manpages.ubuntu.com/manpages/xenial/man7/apparmor.7.html'
+            },
+            {
+              id: 'q-visudo-syntax',
+              type: 'multiple-choice',
+              question: 'Check syntax of sudoers file without editing?',
+              question_ko: 'sudoers 파일의 문법만 검사하려면?',
+              options: [
+                { id: 'opt1', text: 'visudo -c' },
+                { id: 'opt2', text: 'sudo -t' },
+                { id: 'opt3', text: 'checksudo' },
+                { id: 'opt4', text: 'syntax' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "-c (check) check mode.",
+              explanation_ko: "visudo -c 명령은 편집 없이 문법 오류만 검사합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man8/visudo.8.html'
+            },
+            {
+              id: 'q-passwd-lock',
+              type: 'multiple-choice',
+              question: 'Lock a user account?',
+              question_ko: '사용자 계정을 잠궈서 로그인을 막으려면?',
+              codeSnippet: 'passwd ____ user',
+              options: [
+                { id: 'opt1', text: '-d' },
+                { id: 'opt2', text: '-l' },
+                { id: 'opt3', text: '-u' },
+                { id: 'opt4', text: '-x' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "-l (lock) locks the password of the named account.",
+              explanation_ko: "-l 옵션은 비밀번호 앞에 !를 붙여 잠급니다. 풀 때는 -u (unlock)를 씁니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/passwd.1.html'
+            },
+            {
+              id: 'q-su-login',
+              type: 'multiple-choice',
+              question: 'Switch user and load their environment (login shell)?',
+              question_ko: '사용자 전환 시 그 사용자의 환경변수까지 모두 로드하려면?',
+              codeSnippet: 'su ____ user',
+              options: [
+                { id: 'opt1', text: '-' },
+                { id: 'opt2', text: '-e' },
+                { id: 'opt3', text: '-f' },
+                { id: 'opt4', text: '-s' }
+              ],
+              correctAnswerId: 'opt1',
+              explanation: "- (or -l) starts the shell as a login shell with an environment similar to a real login.",
+              explanation_ko: "하이픈(-)을 붙여야 해당 사용자의 홈 디렉토리, PATH 등이 제대로 로드됩니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/su.1.html'
+            },
+            {
+              id: 'q-openssl',
+              type: 'multiple-choice',
+              question: 'General purpose cryptography toolkit?',
+              question_ko: '인증서 생성, 암호화 등 다양한 암호화 작업을 수행하는 도구는?',
+              options: [
+                { id: 'opt1', text: 'crypttool' },
+                { id: 'opt2', text: 'openssl' },
+                { id: 'opt3', text: 'certbot' },
+                { id: 'opt4', text: 'keytool' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "OpenSSL is a robust, commercial-grade, and full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols.",
+              explanation_ko: "OpenSSL은 SSL/TLS 인증서 관리 및 암호화의 사실상 표준 도구입니다.",
+              mdnUrl: 'https://www.openssl.org/docs/man1.1.1/man1/openssl.html'
+            }
+          ]
+        },
+        {
+          id: 'linux-container',
+          title: 'Containers & Virt',
+          title_ko: '컨테이너 & 가상화',
+          description: 'Docker, Podman, KVM.',
+          description_ko: '도커, 포드맨, 가상화 기초.',
+          questions: [
+            {
+              id: 'q-docker-run',
+              type: 'multiple-choice',
+              question: 'Run a command in a new container?',
+              question_ko: '새 컨테이너를 생성하고 실행하는 도커 명령어는?',
+              codeSnippet: 'docker ____ nginx',
+              options: [
+                { id: 'opt1', text: 'start' },
+                { id: 'opt2', text: 'run' },
+                { id: 'opt3', text: 'create' },
+                { id: 'opt4', text: 'exec' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "docker run creates and starts a container in one go.",
+              explanation_ko: "docker run은 이미지를 내려받고 컨테이너를 생성 및 실행합니다. start는 이미 생성된 컨테이너를 켭니다.",
+              mdnUrl: 'https://docs.docker.com/engine/reference/commandline/run/'
+            },
+            {
+              id: 'q-docker-ps',
+              type: 'multiple-choice',
+              question: 'List running containers?',
+              question_ko: '현재 실행 중인 컨테이너 목록을 보려면?',
+              options: [
+                { id: 'opt1', text: 'docker ls' },
+                { id: 'opt2', text: 'docker ps' },
+                { id: 'opt3', text: 'docker list' },
+                { id: 'opt4', text: 'docker show' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "docker ps lists containers.",
+              explanation_ko: "docker ps는 실행 중인 컨테이너만 보여줍니다. -a를 붙이면 정지된 것도 보여줍니다.",
+              mdnUrl: 'https://docs.docker.com/engine/reference/commandline/ps/'
+            },
+            {
+              id: 'q-docker-exec',
+              type: 'multiple-choice',
+              question: 'Run a command in a running container?',
+              question_ko: '이미 실행 중인 컨테이너 내부에 명령어를 실행(접속)하려면?',
+              codeSnippet: 'docker ____ -it container bash',
+              options: [
+                { id: 'opt1', text: 'run' },
+                { id: 'opt2', text: 'exec' },
+                { id: 'opt3', text: 'enter' },
+                { id: 'opt4', text: 'attach' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "docker exec runs a new command in a running container.",
+              explanation_ko: "docker exec -it ... bash 명령으로 컨테이너 쉘에 접속할 수 있습니다.",
+              mdnUrl: 'https://docs.docker.com/engine/reference/commandline/exec/'
+            },
+            {
+              id: 'q-docker-build',
+              type: 'multiple-choice',
+              question: 'Build an image from a Dockerfile?',
+              question_ko: 'Dockerfile을 기반으로 이미지를 빌드하려면?',
+              options: [
+                { id: 'opt1', text: 'docker make' },
+                { id: 'opt2', text: 'docker build' },
+                { id: 'opt3', text: 'docker create' },
+                { id: 'opt4', text: 'docker compile' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "docker build builds an image from a Dockerfile.",
+              explanation_ko: "docker build -t 이름 . 형태로 현재 디렉토리의 Dockerfile을 빌드합니다.",
+              mdnUrl: 'https://docs.docker.com/engine/reference/commandline/build/'
+            },
+            {
+              id: 'q-podman',
+              type: 'multiple-choice',
+              question: 'Daemonless alternative to Docker?',
+              question_ko: '도커와 호환되지만 데몬 없이 작동하는 컨테이너 도구는?',
+              options: [
+                { id: 'opt1', text: 'kubernetes' },
+                { id: 'opt2', text: 'podman' },
+                { id: 'opt3', text: 'lxc' },
+                { id: 'opt4', text: 'rkt' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "Podman is a daemonless container engine.",
+              explanation_ko: "Podman은 도커 명령어와 거의 동일하지만 root 권한 없이도 실행 가능합니다.",
+              mdnUrl: 'https://podman.io/'
+            },
+            {
+              id: 'q-docker-images',
+              type: 'multiple-choice',
+              question: 'List locally stored images?',
+              question_ko: '로컬에 다운로드된 이미지 목록을 보려면?',
+              options: [
+                { id: 'opt1', text: 'docker list' },
+                { id: 'opt2', text: 'docker images' },
+                { id: 'opt3', text: 'docker show' },
+                { id: 'opt4', text: 'docker ls' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "docker images lists images.",
+              explanation_ko: "docker images 명령어로 로컬 저장소의 이미지들을 확인합니다.",
+              mdnUrl: 'https://docs.docker.com/engine/reference/commandline/images/'
+            },
+            {
+              id: 'q-docker-rm',
+              type: 'multiple-choice',
+              question: 'Remove a container?',
+              question_ko: '컨테이너를 삭제하려면?',
+              options: [
+                { id: 'opt1', text: 'docker del' },
+                { id: 'opt2', text: 'docker rm' },
+                { id: 'opt3', text: 'docker rmi' },
+                { id: 'opt4', text: 'docker kill' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "docker rm removes one or more containers.",
+              explanation_ko: "docker rm은 컨테이너를 삭제하고, docker rmi는 이미지를 삭제합니다.",
+              mdnUrl: 'https://docs.docker.com/engine/reference/commandline/rm/'
+            },
+            {
+              id: 'q-docker-rmi',
+              type: 'multiple-choice',
+              question: 'Remove an image?',
+              question_ko: '이미지를 삭제하려면?',
+              options: [
+                { id: 'opt1', text: 'docker rm' },
+                { id: 'opt2', text: 'docker rmi' },
+                { id: 'opt3', text: 'docker del' },
+                { id: 'opt4', text: 'docker purge' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "docker rmi removes one or more images.",
+              explanation_ko: "rmi (remove image) 명령어를 사용합니다.",
+              mdnUrl: 'https://docs.docker.com/engine/reference/commandline/rmi/'
+            },
+            {
+              id: 'q-virsh',
+              type: 'multiple-choice',
+              question: 'Command line interface for managing virtual machines (libvirt)?',
+              question_ko: 'KVM/QEMU 가상머신을 관리하는 커맨드라인 도구는?',
+              options: [
+                { id: 'opt1', text: 'vmctl' },
+                { id: 'opt2', text: 'virsh' },
+                { id: 'opt3', text: 'kvmctl' },
+                { id: 'opt4', text: 'virt' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "virsh is a management user interface for virdomains.",
+              explanation_ko: "virsh list, virsh start 등으로 가상머신을 제어합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man1/virsh.1.html'
+            },
+            {
+              id: 'q-docker-logs',
+              type: 'multiple-choice',
+              question: 'Fetch logs of a container?',
+              question_ko: '컨테이너의 로그(표준 출력)를 확인하려면?',
+              options: [
+                { id: 'opt1', text: 'docker tail' },
+                { id: 'opt2', text: 'docker logs' },
+                { id: 'opt3', text: 'docker cat' },
+                { id: 'opt4', text: 'docker show' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "docker logs fetches the logs of a container.",
+              explanation_ko: "docker logs -f 컨테이너명으로 로그를 실시간 확인합니다.",
+              mdnUrl: 'https://docs.docker.com/engine/reference/commandline/logs/'
+            },
+            {
+              id: 'q-docker-compose',
+              type: 'multiple-choice',
+              question: 'Tool for defining and running multi-container applications?',
+              question_ko: '여러 컨테이너를 정의하고 실행하기 위한 도구는?',
+              options: [
+                { id: 'opt1', text: 'docker-swarm' },
+                { id: 'opt2', text: 'docker-compose' },
+                { id: 'opt3', text: 'docker-multi' },
+                { id: 'opt4', text: 'docker-stack' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "docker-compose is a tool for defining and running multi-container Docker applications.",
+              explanation_ko: "docker-compose.yml 파일에 서비스를 정의하고 docker-compose up으로 실행합니다.",
+              mdnUrl: 'https://docs.docker.com/compose/'
+            },
+            {
+              id: 'q-cgroup',
+              type: 'multiple-choice',
+              question: 'Linux kernel feature to limit resource usage?',
+              question_ko: '프로세스 그룹의 자원(CPU, 메모리) 사용을 제한하는 리눅스 커널 기능은?',
+              options: [
+                { id: 'opt1', text: 'namespace' },
+                { id: 'opt2', text: 'cgroups' },
+                { id: 'opt3', text: 'capabilities' },
+                { id: 'opt4', text: 'seccomp' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "Control Groups (cgroups) limit, account for, and isolate the resource usage.",
+              explanation_ko: "cgroups(Control Groups)는 컨테이너 기술의 핵심 중 하나로 자원 격리를 담당합니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man7/cgroups.7.html'
+            },
+            {
+              id: 'q-namespace',
+              type: 'multiple-choice',
+              question: 'Feature to isolate system resources like PID, Network?',
+              question_ko: '프로세스, 네트워크, 마운트 포인트 등을 격리하여 독립된 환경을 만드는 기술은?',
+              options: [
+                { id: 'opt1', text: 'chroot' },
+                { id: 'opt2', text: 'namespaces' },
+                { id: 'opt3', text: 'jail' },
+                { id: 'opt4', text: 'zones' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "Namespaces wrap a global system resource in an abstraction that makes it appear to the processes within the namespace that they have their own isolated instance.",
+              explanation_ko: "Namespace는 컨테이너가 별도의 시스템인 것처럼 보이게 하는 격리 기술입니다.",
+              mdnUrl: 'https://man7.org/linux/man-pages/man7/namespaces.7.html'
+            },
+            {
+              id: 'q-lxc',
+              type: 'multiple-choice',
+              question: 'Linux Containers (userspace interface)?',
+              question_ko: '도커 이전에 사용되던 리눅스 컨테이너 기술(OS 레벨 가상화)은?',
+              options: [
+                { id: 'opt1', text: 'xen' },
+                { id: 'opt2', text: 'lxc' },
+                { id: 'opt3', text: 'kvm' },
+                { id: 'opt4', text: 'qemu' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "LXC (Linux Containers) is an operating-system-level virtualization method.",
+              explanation_ko: "LXC는 시스템 컨테이너를 제공하며, 도커 초기 버전의 실행 드라이버로 사용되었습니다.",
+              mdnUrl: 'https://linuxcontainers.org/'
+            },
+            {
+              id: 'q-docker-stop',
+              type: 'multiple-choice',
+              question: 'Stop a running container gracefully?',
+              question_ko: '컨테이너를 정상적으로 종료(SIGTERM)하려면?',
+              options: [
+                { id: 'opt1', text: 'docker kill' },
+                { id: 'opt2', text: 'docker stop' },
+                { id: 'opt3', text: 'docker down' },
+                { id: 'opt4', text: 'docker halt' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "docker stop stops a running container.",
+              explanation_ko: "docker stop은 먼저 SIGTERM을 보내고, 반응이 없으면 SIGKILL을 보냅니다.",
+              mdnUrl: 'https://docs.docker.com/engine/reference/commandline/stop/'
+            },
+            {
+              id: 'q-docker-pull',
+              type: 'multiple-choice',
+              question: 'Download an image from a registry?',
+              question_ko: '레지스트리(Docker Hub)에서 이미지를 다운로드하려면?',
+              options: [
+                { id: 'opt1', text: 'docker get' },
+                { id: 'opt2', text: 'docker pull' },
+                { id: 'opt3', text: 'docker fetch' },
+                { id: 'opt4', text: 'docker download' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "docker pull pulls an image or a repository from a registry.",
+              explanation_ko: "docker pull ubuntu 처럼 이미지를 미리 받아올 수 있습니다.",
+              mdnUrl: 'https://docs.docker.com/engine/reference/commandline/pull/'
+            },
+            {
+              id: 'q-overlayfs',
+              type: 'multiple-choice',
+              question: 'Filesystem commonly used by Docker?',
+              question_ko: '도커가 레이어(Layer) 이미지를 구현하기 위해 주로 사용하는 유니온 파일 시스템은?',
+              options: [
+                { id: 'opt1', text: 'ntfs' },
+                { id: 'opt2', text: 'overlay2' },
+                { id: 'opt3', text: 'ext4' },
+                { id: 'opt4', text: 'xfs' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "OverlayFS (overlay2) is a union mount filesystem implementation for Linux.",
+              explanation_ko: "overlay2는 효율적인 레이어 관리를 위해 도커에서 기본으로 사용합니다.",
+              mdnUrl: 'https://docs.docker.com/storage/storagedriver/overlayfs-driver/'
+            },
+            {
+              id: 'q-docker-inspect',
+              type: 'multiple-choice',
+              question: 'Return low-level information on Docker objects?',
+              question_ko: '컨테이너나 이미지의 상세 정보(IP, 마운트 정보 등 JSON 형태)를 보려면?',
+              options: [
+                { id: 'opt1', text: 'docker info' },
+                { id: 'opt2', text: 'docker inspect' },
+                { id: 'opt3', text: 'docker detail' },
+                { id: 'opt4', text: 'docker status' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "docker inspect returns low-level information on Docker objects.",
+              explanation_ko: "docker inspect는 매우 상세한 설정 정보를 JSON 형식으로 출력합니다.",
+              mdnUrl: 'https://docs.docker.com/engine/reference/commandline/inspect/'
+            },
+            {
+              id: 'q-kubectl',
+              type: 'multiple-choice',
+              question: 'Command line tool for controlling Kubernetes clusters?',
+              question_ko: '쿠버네티스 클러스터를 제어하는 커맨드라인 도구는?',
+              options: [
+                { id: 'opt1', text: 'kubeadm' },
+                { id: 'opt2', text: 'kubectl' },
+                { id: 'opt3', text: 'kubectrl' },
+                { id: 'opt4', text: 'k8s' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "kubectl controls the Kubernetes cluster manager.",
+              explanation_ko: "kubectl get pods 처럼 k8s 리소스를 관리합니다.",
+              mdnUrl: 'https://kubernetes.io/docs/reference/kubectl/'
+            },
+            {
+              id: 'q-docker-prune',
+              type: 'multiple-choice',
+              question: 'Remove unused data (containers, images, networks)?',
+              question_ko: '사용하지 않는 모든 데이터(컨테이너, 이미지 등)를 정리하여 공간을 확보하려면?',
+              codeSnippet: 'docker system ____',
+              options: [
+                { id: 'opt1', text: 'clean' },
+                { id: 'opt2', text: 'prune' },
+                { id: 'opt3', text: 'gc' },
+                { id: 'opt4', text: 'purge' }
+              ],
+              correctAnswerId: 'opt2',
+              explanation: "docker system prune removes unused data.",
+              explanation_ko: "prune 명령은 중지된 컨테이너, 미사용 네트워크, 댕글링 이미지를 모두 삭제합니다.",
+              mdnUrl: 'https://docs.docker.com/engine/reference/commandline/system_prune/'
+            }
+          ]
+        }
+      ]
+    },
+
   ]
 };

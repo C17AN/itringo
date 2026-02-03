@@ -7,8 +7,8 @@ import clsx from 'clsx';
 
 export default function Settings() {
   const navigate = useNavigate();
-  const { preferences, setLanguage, setFontSize, setJobRole } = useQuizStore();
-  const t = useTranslation(preferences.language);
+  const { preferences, setFontSize, setJobRole } = useQuizStore();
+  const t = useTranslation();
 
   return (
     <Layout>
@@ -59,37 +59,6 @@ export default function Settings() {
              >
                <span>{t.infraEng}</span>
                {preferences.jobRole === 'infra' && <Check className="w-5 h-5" />}
-             </button>
-          </div>
-        </section>
-
-        {/* Language Section */}
-        <section>
-          <h2 className="text-lg font-bold mb-4 text-gray-700">{t.language}</h2>
-          <div className="grid grid-cols-2 gap-4">
-             <button
-               onClick={() => setLanguage('en')}
-               className={clsx(
-                 "p-4 rounded-xl border-2 flex items-center justify-between transition-all",
-                 preferences.language === 'en' 
-                   ? "border-mdn-blue bg-blue-50 text-mdn-blue font-bold"
-                   : "border-gray-200 hover:bg-gray-50"
-               )}
-             >
-               <span>English</span>
-               {preferences.language === 'en' && <Check className="w-5 h-5" />}
-             </button>
-             <button
-               onClick={() => setLanguage('ko')}
-               className={clsx(
-                 "p-4 rounded-xl border-2 flex items-center justify-between transition-all",
-                 preferences.language === 'ko' 
-                   ? "border-mdn-blue bg-blue-50 text-mdn-blue font-bold"
-                   : "border-gray-200 hover:bg-gray-50"
-               )}
-             >
-               <span>한국어</span>
-               {preferences.language === 'ko' && <Check className="w-5 h-5" />}
              </button>
           </div>
         </section>

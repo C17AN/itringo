@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, XCircle, ArrowRight } from 'lucide-react';
 import { clsx } from 'clsx';
-import { useQuizStore } from '../store/quizStore';
+// import { useQuizStore } from '../store/quizStore';
 import { useTranslation } from '../i18n/ui';
 
 interface FeedbackModalProps {
@@ -13,8 +13,7 @@ interface FeedbackModalProps {
 }
 
 export function FeedbackModal({ isOpen, isCorrect, correctAnswerText, explanation, onNext }: FeedbackModalProps) {
-  const { preferences } = useQuizStore();
-  const t = useTranslation(preferences.language);
+  const t = useTranslation();
 
   return (
     <AnimatePresence>

@@ -4,7 +4,8 @@ import { Layout } from '../components/Layout';
 import { ProgressBar } from '../components/ProgressBar';
 import { OptionButton } from '../components/OptionButton';
 import { FeedbackModal } from '../components/FeedbackModal';
-import { X, Heart } from 'lucide-react';
+import { TerminalModal } from '../components/TerminalModal';
+import { X, Heart, Terminal } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { clsx } from 'clsx';
 import { useTranslation } from '../i18n/ui';
@@ -21,8 +22,7 @@ export default function Quiz() {
     preferences
   } = useQuizStore();
   
-  const t = useTranslation(preferences.language);
-  const lang = preferences.language;
+  const t = useTranslation();
 
   const unit = getCurrentUnit();
   const question = getCurrentQuestion();
@@ -30,6 +30,7 @@ export default function Quiz() {
   const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
   const [status, setStatus] = useState<'idle' | 'checked'>('idle');
   const [isCorrect, setIsCorrect] = useState(false);
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false);
 
   useEffect(() => {
     if (!unit || hearts === 0) {
@@ -40,8 +41,8 @@ export default function Quiz() {
   if (!unit || !question) return null;
 
   // Translation helpers
-  const questionText = lang === 'ko' && question.question_ko ? question.question_ko : question.question;
-  const explanationText = lang === 'ko' && question.explanation_ko ? question.explanation_ko : question.explanation;
+  const questionText = question.question_ko || question.question;
+  const explanationText = question.explanation_ko || question.explanation;
 
   const handleCheck = () => {
     if (!selectedOptionId) return;
@@ -54,6 +55,7 @@ export default function Quiz() {
 
   const handleNext = () => {
     if (currentQuestionIndex >= unit.questions.length - 1) {
+       nextQuestion();
        navigate('/result?status=success');
     } else {
        setSelectedOptionId(null);
@@ -71,7 +73,7 @@ export default function Quiz() {
   };
   
   const getOptionText = (opt: typeof question.options[0]) => {
-     return lang === 'ko' && opt.text_ko ? opt.text_ko : opt.text;
+     return opt.text_ko || opt.text;
   };
   
   const getCorrectAnswerText = () => {
@@ -101,8 +103,20 @@ export default function Quiz() {
         <h2 className="text-2xl font-bold mb-6">{questionText}</h2>
 
         {question.codeSnippet && (
-          <div className="bg-mdn-black text-gray-200 p-4 rounded-xl font-mono text-sm mb-8 overflow-x-auto code-scroll shadow-lg border border-gray-700">
-            <pre>{question.codeSnippet}</pre>
+          <div className="relative group">
+            <div className="bg-mdn-black text-gray-200 p-4 rounded-xl font-mono text-sm mb-8 overflow-x-auto code-scroll shadow-lg border border-gray-700">
+              <pre>{question.codeSnippet}</pre>
+            </div>
+            
+            {preferences.jobRole === 'infra' && (
+              <button
+                onClick={() => setIsTerminalOpen(true)}
+                className="absolute top-2 right-2 bg-gray-800/80 hover:bg-mdn-blue text-white p-2 rounded-lg backdrop-blur-sm border border-gray-600 transition-all flex items-center gap-2 text-xs font-bold shadow-xl"
+              >
+                <Terminal className="w-4 h-4" />
+                터미널 실행
+              </button>
+            )}
           </div>
         )}
 
@@ -143,6 +157,11 @@ export default function Quiz() {
         correctAnswerText={getCorrectAnswerText()}
         explanation={explanationText}
         onNext={handleNext}
+      />
+
+      <TerminalModal 
+        isOpen={isTerminalOpen} 
+        onClose={() => setIsTerminalOpen(false)} 
       />
     </Layout>
   );

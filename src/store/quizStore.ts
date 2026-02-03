@@ -12,9 +12,8 @@ interface QuizStore {
   score: number;
   streak: number;
   completedUnits: string[];
-  randomQuestions: Question[]; // Temp storage for random mode
+  activeQuestions: Question[]; // Questions for the current session (shuffled or random)
   preferences: {
-    language: 'en' | 'ko';
     fontSize: 'small' | 'medium' | 'large';
     jobRole: 'frontend' | 'backend' | 'infra';
   };
@@ -32,7 +31,6 @@ interface QuizStore {
   nextQuestion: () => void;
   resetProgress: () => void;
   resetHearts: () => void;
-  setLanguage: (lang: 'en' | 'ko') => void;
   setFontSize: (size: 'small' | 'medium' | 'large') => void;
   setJobRole: (role: 'frontend' | 'backend' | 'infra') => void;
 }
@@ -47,9 +45,8 @@ export const useQuizStore = create<QuizStore>()(
       score: 0,
       streak: 0,
       completedUnits: [],
-      randomQuestions: [],
+      activeQuestions: [],
       preferences: {
-        language: 'en',
         fontSize: 'medium',
         jobRole: 'frontend',
       },
@@ -60,7 +57,7 @@ export const useQuizStore = create<QuizStore>()(
       },
 
       getCurrentUnit: () => {
-        const { currentUnitId } = get();
+        const { currentUnitId, activeQuestions } = get();
         if (!currentUnitId) return undefined;
         if (currentUnitId === 'random') {
            return {
@@ -69,25 +66,34 @@ export const useQuizStore = create<QuizStore>()(
              title_ko: '빠른 연습',
              description: 'Random questions from all courses',
              description_ko: '모든 코스에서 무작위로 추출된 문제',
-             questions: get().randomQuestions
+             questions: activeQuestions
            } as Unit;
         }
-        return findUnit(currentUnitId)?.unit;
+        const data = findUnit(currentUnitId);
+        if (!data) return undefined;
+        return { ...data.unit, questions: activeQuestions };
       },
 
       getCurrentQuestion: () => {
-        const unit = get().getCurrentUnit();
-        const { currentQuestionIndex } = get();
-        return unit?.questions[currentQuestionIndex];
+        const { activeQuestions, currentQuestionIndex } = get();
+        return activeQuestions[currentQuestionIndex];
       },
 
       setCourse: (courseId) => set({ currentCourseId: courseId }),
 
-      startUnit: (unitId) => set({
-        currentUnitId: unitId,
-        currentQuestionIndex: 0,
-        streak: 0,
-      }),
+      startUnit: (unitId) => {
+        const data = findUnit(unitId);
+        if (data) {
+          // Shuffle questions for the selected unit
+          const shuffled = [...data.unit.questions].sort(() => Math.random() - 0.5);
+          set({
+            currentUnitId: unitId,
+            currentQuestionIndex: 0,
+            streak: 0,
+            activeQuestions: shuffled
+          });
+        }
+      },
 
       startRandomQuiz: () => {
         const { preferences } = get();
@@ -96,7 +102,7 @@ export const useQuizStore = create<QuizStore>()(
           currentUnitId: 'random',
           currentQuestionIndex: 0,
           streak: 0,
-          randomQuestions: questions
+          activeQuestions: questions
         });
       },
 
@@ -139,10 +145,6 @@ export const useQuizStore = create<QuizStore>()(
       }),
       
       resetHearts: () => set({ hearts: 5 }),
-
-      setLanguage: (lang) => set((state) => ({ 
-        preferences: { ...state.preferences, language: lang } 
-      })),
       
       setFontSize: (size) => set((state) => ({ 
         preferences: { ...state.preferences, fontSize: size } 

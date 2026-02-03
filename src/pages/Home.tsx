@@ -33,8 +33,7 @@ const getIcon = (iconName: string) => {
 export default function Home() {
   const navigate = useNavigate();
   const { startUnit, startRandomQuiz, completedUnits, hearts, currentCourseId, setCourse, getCurrentCourse, preferences } = useQuizStore();
-  const t = useTranslation(preferences.language);
-  const lang = preferences.language;
+  const t = useTranslation();
 
   const currentCourse = getCurrentCourse();
 
@@ -83,7 +82,7 @@ export default function Home() {
                >
                  {getIcon(course.icon)}
                  <span className="text-xs uppercase tracking-wide">
-                    {lang === 'ko' && course.title_ko ? course.title_ko : course.title}
+                    {course.title_ko || course.title}
                  </span>
                  {isActive && (
                    <motion.div 
@@ -123,13 +122,25 @@ export default function Home() {
             transition={{ duration: 0.2 }}
             className="space-y-8"
           >
-            {currentCourse?.chapters.map((chapter) => (
-              <div key={chapter.id}>
-                <h3 className="text-gray-500 font-bold uppercase text-sm mb-3 tracking-wider ml-1">
-                  {lang === 'ko' && chapter.title_ko ? chapter.title_ko : chapter.title}
-                </h3>
-                <div className="space-y-4">
-                  {chapter.units.map((unit) => {
+            {currentCourse?.chapters.map((chapter) => {
+              const totalUnits = chapter.units.length;
+              const completedCount = chapter.units.filter(u => completedUnits.includes(u.id)).length;
+              
+              return (
+                <div key={chapter.id}>
+                  <div className="flex justify-between items-center mb-3 ml-1 mr-1">
+                    <h3 className="text-gray-500 font-bold uppercase text-sm tracking-wider">
+                      {chapter.title_ko || chapter.title}
+                    </h3>
+                    <span className={clsx(
+                      "text-xs font-bold px-2 py-1 rounded-full",
+                      completedCount === totalUnits ? "bg-green-100 text-green-700" : "bg-gray-100 text-gray-500"
+                    )}>
+                      {completedCount} / {totalUnits}
+                    </span>
+                  </div>
+                  <div className="space-y-4">
+                    {chapter.units.map((unit) => {
                     const isCompleted = completedUnits.includes(unit.id);
                     
                     // Logic for locking removed: All units accessible
@@ -157,10 +168,10 @@ export default function Home() {
                           
                           <div className="flex-1 min-w-0">
                             <h3 className="font-bold text-lg mb-1 truncate">
-                              {lang === 'ko' && unit.title_ko ? unit.title_ko : unit.title}
+                              {unit.title_ko || unit.title}
                             </h3>
                             <p className="text-sm text-gray-500 line-clamp-2 leading-relaxed">
-                              {lang === 'ko' && unit.description_ko ? unit.description_ko : unit.description}
+                              {unit.description_ko || unit.description}
                             </p>
                           </div>
 
@@ -173,7 +184,8 @@ export default function Home() {
                   })}
                 </div>
               </div>
-            ))}
+            );
+          })}
             
             {/* Bottom Padding for visual comfort */}
             <div className="h-12" />

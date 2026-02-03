@@ -9,8 +9,8 @@ export default function Result() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const status = searchParams.get('status');
-  const { score, hearts, resetHearts, preferences } = useQuizStore();
-  const t = useTranslation(preferences.language);
+  const { score, hearts, resetHearts } = useQuizStore();
+  const t = useTranslation();
   
   const isSuccess = status === 'success';
 
